@@ -1,6 +1,6 @@
 # AlquiCAR
 
-Crearemos una empresa destinada al alquiler de coches donde se tendrá en cuenta diversos factores del vehículo (marca, características…). Esta empresa está destinada a satisfacer los deseos del cliente para la máxima comodidad con su vehículo. 
+Empresa destinada al alquiler de coches donde se tendrá en cuenta diversos factores del vehículo (marca, características…). Esta empresa está destinada a satisfacer los deseos del cliente para la máxima comodidad con su vehículo. 
 
 ## Integrantes del equipo
 
