@@ -4,11 +4,11 @@ Empresa destinada al alquiler de coches donde se tendrá en cuenta diversos fact
 
 ## Integrantes del equipo
 
-Bárbara Culebras Villalba
+Bárbara Culebras Villalba (BarbaraCulebras)
 
-Lucía Jiménez Castro
+Lucía Jiménez Castro (LaLola1)
 
-Daniel Vallero Iglesias
+Daniel Vallero Iglesias 
 
 
 ## Objetivos del trabajo
