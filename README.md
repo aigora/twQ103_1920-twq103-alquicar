@@ -8,7 +8,7 @@ Bárbara Culebras Villalba (BarbaraCulebras)
 
 Lucía Jiménez Castro (LaLola1)
 
-Daniel Vallero Iglesias 
+Daniel Vallero Iglesias (Danoniino)
 
 
 ## Objetivos del trabajo
