@@ -221,10 +221,11 @@ int main (){
 		
 		case 6:
 			printf("Salir del menu \n");
+		break;	
 
 		default : 
 			printf("NO HA SELECIONADO NINGUNA OPCION VALIDA, POR FAVOR, INTENTELO DE NUEVO \n"); 
 
-	} while (opcion !=6);
+	} while (opcion != 6);
 	}
 }
