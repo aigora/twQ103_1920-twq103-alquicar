@@ -1,6 +1,7 @@
 #include <stdio.h>
 #define coches 25 //Coches disponibles
-#define patines 3 //Patines electricos
+#define patines 5 //Patines electricos
+//No se como poner el %  cuando digo 100% si escribo 100PORCIEN queda un poco mal
 int main (){
 	int opcion, categoria;
 	char inicio, nombre, correo, contra, domicilio, poblacion, codPos, telefono;
@@ -66,7 +67,7 @@ int main (){
 		printf ("4-Si buscas lo mas barato y comodo te damos las mejores opciones \n");
 		printf ("5-Si estas a la moda y optas por un coche electrico es aqui donde debes buscar \n");
 		printf ("6-Si lo que quieres es un coche que no suene para que no se entere nadie de que te vas, esta es tu opcion \n");
-		printf ("7-Si lo que deseas es disfrutar de la naturaleza en su estado puro a través de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n ");
+		printf ("7-Si lo que deseas es oler el ambiente madrileno a través de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n ");
 		scanf("%d", &categoria);
 
 		switch (categoria){
@@ -148,7 +149,7 @@ int main (){
 	
 				printf("\n");
 				printf("KIA PICANTO \n");
-				printf("El Kia Picanto es un urbano de cinco puertas. Esta disponible con un motor de gasolina de un litro y 66 CV, y un equilibrado 1.2 CVVT con 85 CV");
+				printf("El Kia Picanto es un urbano de cinco puertas. Esta disponible con un motor de gasolina de un litro y 66 CV, y un equilibrado 1.2 CVVT con 85 CV\n");
 	
 	    
 	    	
@@ -156,27 +157,27 @@ int main (){
 	    	break;
 	    	
 	    	
-			case 5: printf("Ser cero, ahora, suma más que nunca. Con la etiqueta de 0 emisiones de la DGT, podrás conducir por el centro de la ciudad siempre que quieras, además de disfrutar de muchos otros beneficios, descuentos y ayudas dependiendo de la comunidad autónoma en la que te encuentres.\n");
+			case 5: printf("Ser cero, ahora, suma mas que nunca. Con la etiqueta de 0 emisiones de la DGT, podras conducir por el centro de la ciudad siempre que quieras, ademas de disfrutar de muchos otros beneficios, descuentos y ayudas dependiendo de la comunidad autonoma en la que te encuentres.\n");
 			
 				printf("\n");
 				printf("PEUGEOT E-208 \n");
-				printf("El nuevo coche urbano PEUGEOT e-208 ofrece una vivacidad y un placer de conduccion estimulante gracias a su motorización 100% electrica y da claramente acceso a una nueva movilidad. \n Carga tu e-208 mas rapido y con total seguridad gracias a nuestra oferta en punto de carga: la carga completa puede reducirse a siete horas y media en un punto de carga de 7,4 kW.");
+				printf("El nuevo coche urbano PEUGEOT e-208 ofrece una vivacidad y un placer de conduccion estimulante gracias a su motorizacion 100% electrica y da claramente acceso a una nueva movilidad. \n Carga tu e-208 mas rapido y con total seguridad gracias a nuestra oferta en punto de carga: la carga completa puede reducirse a siete horas y media en un punto de carga de 7,4 kW.\n");
 				
 				printf("\n");
 				printf("CITROEN E-BERLINGO MULTISPACE \n");
-				printf("El Nuevo E-Berlingo Multispace ofrece toda la polivalencia del Berlingo en el dia a dia, con las ventajas de los coches electricos. \n El Nuevo E-Berlingo Multispace incorpora un motor electrico de altas prestaciones de tipo sincrono con imanes permanentes de 49 kW (67 CV).");
+				printf("El Nuevo E-Berlingo Multispace ofrece toda la polivalencia del Berlingo en el dia a dia, con las ventajas de los coches electricos. \n El Nuevo E-Berlingo Multispace incorpora un motor electrico de altas prestaciones de tipo sincrono con imanes permanentes de 49 kW (67 CV).\n");
 				
 				printf("\n");
 				printf("BMW i3 \n ");
-				printf("Subete a este vehiculo de 7 plazas y descubre el futuro muy de cerca. \n El BMW i3 esta lleno de tecnologias innovadoras que le permiten dominar la vida diaria.  \n Te conecta con el mundo exterior, te informa, te ayuda a organizarte y te lleva hasta tu destino. \n Siempre listo para la carretera con 6 marchas o automático y además, con un maletero que se puede convertir en dos plazas más.");
+				printf("Subete a este vehiculo de 7 plazas y descubre el futuro muy de cerca. \n El BMW i3 esta lleno de tecnologias innovadoras que le permiten dominar la vida diaria.  \n Te conecta con el mundo exterior, te informa, te ayuda a organizarte y te lleva hasta tu destino. \n Siempre listo para la carretera con 6 marchas o automatico y ademas, con un maletero que se puede convertir en dos plazas mas.\n");
 				
 				printf("\n");
 				printf("VOLKSWAGEN ID.3 \n");
-				printf("Directo, potente y sin cambios. \n El ID.3 emociona con su traccion trasera y la potencia de su aceleracion. Vive la emocion de la movilidad electrica desde la salida.");
+				printf("Directo, potente y sin cambios. \n El ID.3 emociona con su traccion trasera y la potencia de su aceleracion. Vive la emocion de la movilidad electrica desde la salida.\n");
 				
 				printf("\n");
 				printf("BMW X3 xDrive30e");
-				printf("El BMW X3 xDrive30e acelera en 6,5 segundos de 0 a 100 km/h y alcanza los 135 km/h en modo electrico (210 km/h con el motor gasolina). \n La energia electrica se acumula en una bateria de iones de litio de 12 kWh, capacidad suficiente para recorrer entre 41 y 46 km en modo 100% electrico.");
+				printf("El BMW X3 xDrive30e acelera en 6,5 segundos de 0 a 100 km/h y alcanza los 135 km/h en modo electrico (210 km/h con el motor gasolina). \n La energia electrica se acumula en una bateria de iones de litio de 12 kWh, capacidad suficiente para recorrer entre 41 y 46 km en modo 100PORCIEN electrico.\n");
 		
 	    	
 	    	
@@ -187,26 +188,52 @@ int main (){
 			
 				printf("\n");
 				printf("FORD MONDEO HYBRID \n ");
-				printf("El Mondeo es un modelo brillante desde el punto de vista dinamico y por habitabilidad en las plazas traseras, aunque en esta variante híbrida el maletero se reduce de 550 a 383 litros en la variante de cuatro puertas. Su propulsor gasolina-electrico de 187 CV, aparejado a una caja de cambios automatica, de seis velocidades, combina unos consumos muy ajustados");
+				printf("El Mondeo es un modelo brillante desde el punto de vista dinamico y por habitabilidad en las plazas traseras, aunque en esta variante híbrida el maletero se reduce de 550 a 383 litros en la variante de cuatro puertas. Su propulsor gasolina-electrico de 187 CV, aparejado a una caja de cambios automatica, de seis velocidades, combina unos consumos muy ajustados.\n");
 				
 				printf("\n");
 				printf("HYUNDAI IONIQ \n ");
-				printf("El Hyundai y las versiones hibridas combinan un motor eléctrico con otro 1.6 de gasolina, para entregar un total de 141 CV.");
+				printf("El Hyundai y las versiones hibridas combinan un motor electrico con otro 1.6 de gasolina, para entregar un total de 141 CV.\n");
 				
 				printf("\n");
 				printf("HONDA CR-V HYBRID \n ");
-				printf("El Honda recurre a la tecnología i-MMD, siglas de Intelligent Multi-Mode Drive-, que consta de cuatro partes esenciales:\n un motor de gasolina de 2.0 litros, un propulsor electrico, un generador; y una batería de iones de litio, con una capacidad aproximada de 1 kWh. \n Este sistema consta con tres modos de funcionamiento: 100% electrico, hibrido y solo con el motor de combustion.");
+				printf("El Honda recurre a la tecnologia i-MMD, siglas de Intelligent Multi-Mode Drive-, que consta de cuatro partes esenciales:\n un motor de gasolina de 2.0 litros, un propulsor electrico, un generador; y una batería de iones de litio, con una capacidad aproximada de 1 kWh. \n Este sistema consta con tres modos de funcionamiento: 100 POR CIEN electrico, hibrido y solo con el motor de combustion.\n");
 				
 				printf("\n");
 				printf("TOYOTA CAMRY \n");
-				printf("Este Toyota comparte plataforma modular TNGA-K con el Lexus ES, mientras que el motor híbrido de 218 CV es idéntico al que monta el Toyota RAV4 hybrid. \n Este propulsor se asocia a un cambio automatico de tipo CVT y a la tracción delantera y, gracias a su condicion hibrida, permite al Camry homologar un consumo medio de 5,3 litros/100 km segun el ciclo WLTP. \n");
+				printf("Este Toyota comparte plataforma modular TNGA-K con el Lexus ES, mientras que el motor hibrido de 218 CV es idéntico al que monta el Toyota RAV4 hybrid. \n Este propulsor se asocia a un cambio automatico de tipo CVT y a la traccion delantera y, gracias a su condicion hibrida, permite al Camry homologar un consumo medio de 5,3 litros/100 km segun el ciclo WLTP. \n");
 				
 				printf("\n");
 				printf("TOYOTA CH-R \n");
 				printf("El Toyota C-HR se ha convertido en todo un Exito de ventas desde su lanzamiento.  \n ADEMAS, mantiene la version 1.8 Hybrid de 122 CV y anade la mas potente 2.0 Hybrid de 184 CV. \n ");
 			
 	    	break;
-			
+	    	
+	    	case 7: printf("¡Sobre dos ruedas y desarollando el olfato! \n ");
+	    	
+	    		printf("\n");
+	    		printf("M MegaWheels S5");
+	    		printf("Este es el patinete electrico tope de gama de la marca Megawheels. \n  Tiene una autonomia bastante correcta: 18-20km, con 2-3 horas de carga. \n Para esto incorpora un sistema de recuperacion de ahorro de energia: cuando conduces el patinete, al accionar los frenos y al soltar el acelerador, activan este sistema. \n A traves de este sistema la energia cinetica producida se convierte en energía electrica que se almacena de nuevo en la bateria. \n Se pliega en menos de 5 segundos y se lleva muy fácilmente en la mano (12,5 kg) gracias a un aluminio muy resistente.");
+	    		
+	    		printf("\n");
+	    		printf("IWatRoad R9/Ecogyro GScooter S9");
+	    		printf("¡Para todos, incluso hasta los mas pequeños! Incorpora dos programas que limitan la velocidad máxima hasta 15 y 25 km/h. \n De esta forma, se lo puedes dejar a tu hijo sin problema o regular la velocidad si vas por una avenida peatonal. ");
+	    		
+	    		
+	    		printf("\n");
+	    		printf("Xiaomi Mi Scooter M365");
+	    		printf("Este es el patinete más equilibrado de nuestra seleccion.\n Podras recorrer hasta 30 km, estando siempre al tanto de las cuatro luces de notificacion LED en el panel que te indican la bateria restante. \n Ademas de una bateria de gran capacidad, incorpora un sistema de frenada regenerativa, por el cual la bateria se va recargando segun circulas con tu patinete.");
+	    		
+	    		
+	    		printf("\n");
+	    		printf("Cecotec Outsider E-volution Phoenix 8.5");
+	    		printf("Este modelo te interesara si mides mas de 1,85m, ya que su mastil es mas alto haciendo que la conduccion sea mucho mas natural y comoda.\n En cuanto a la autonomia, tiene 3 modos de conduccion acomodado a todo tipo de trayectos. \n");
+	    		
+	    		
+	    		printf("\n");
+	    		printf("Xiaomi Mi Electric Scooter Pro");
+	    		printf("Olvidate de mirar cuanta bateria te queda. El fabricante asegura que en condiciones optimas se pueden alcanzar los 45 km de autonomia.\n Ademas cuenta con: Frenos de disco ABS antiderrapaje \n Freno delantero regenerativo\n Autonomia.");
+	    	
+	    	break;
 		}
 
 		break;
@@ -221,10 +248,11 @@ int main (){
 		
 		case 6:
 			printf("Salir del menu \n");
+		break;	
 
 		default : 
-			printf("NO HA SELECIONADO NINGUNA OPCION VALIDA, POR FAVOR, INTENTELO DE NUEVO \n"); 
+			printf("NO HA SELECIONADO NINGUNA OPCION VALIDA, POR FAVOR, INTENTELO DE NUEVO"); 
 
-	} while (opcion !=6);
-	}
+		} 
+	} while (opcion!=6);
 }
