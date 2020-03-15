@@ -1,5 +1,6 @@
 #include <stdio.h>
-#define coches 25 //coches disponibles
+#define coches 25 //Coches disponibles
+#define patines 3 //Patines electricos
 int main (){
 	int opcion, categoria;
 	char inicio, nombre, correo, contra, domicilio, poblacion, codPos, telefono;
@@ -9,15 +10,16 @@ int main (){
 
 	//system ("clc"); (limpia la pantalla)
 	do{
-		
-	printf ("SELECCIONE UNA DE LAS CATEGORIAS \n");
+
+	printf ("SELECCIONE UNA DE LAS SIGUIENTES OPCIONES \n");
 	printf ("1-REGISTRARSE \n");
 	printf ("2-INICIAR SESION \n");
 	printf ("3-VER CATALOGO \n"); /*No es necesario registrarse para verlo*/
 	printf ("4-MIS RESERVAS \n"); /* Es obligatorio el registro para hacer reservas*/
 	printf ("5-QUIENES SOMOS \n");
+	printf ("6-CERRAR MENU \n");
 	scanf("%d", &opcion);
-	
+
 	switch (opcion){
 		case 1: printf("SE VA A LLEVAR A CABO SU REGISTRO: \n");
 		printf("Introduzca su nombre y apellidos: \n");
@@ -43,8 +45,8 @@ int main (){
 		scanf("%c", &telefono);
 		printf("Su registro se ha realizado con exito \n");
 		break;
-		
-		
+
+
 		case 2: printf("INICIA TU SESION \n");
 		fflush (stdin);
 		printf("Introduzca su correo o nombre de usuario:\n");
@@ -55,7 +57,7 @@ int main (){
 		printf ("TOQUE UNA TECLA PARA VOLVER AL MENU \n");
 		scanf ("%c", &inicio);
 		break;
-		
+
 		case 3: printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n", coches); 
 		printf ("SELECCIONE UNA DE LAS CATEGORIAS \n");
 		printf ("1-Si buscas un viaje de grupo o sois una familia numerosa y siempre os falta espacio tenemos vuestra solucion  \n");
@@ -63,95 +65,166 @@ int main (){
 		printf ("3-Si lo que te gusta es volar y lo tuyo son los coches deportivos aqui encontraras lo que buscas \n");
 		printf ("4-Si buscas lo mas barato y comodo te damos las mejores opciones \n");
 		printf ("5-Si estas a la moda y optas por un coche electrico es aqui donde debes buscar \n");
+		printf ("6-Si lo que quieres es un coche que no suene para que no se entere nadie de que te vas, esta es tu opcion \n");
+		printf ("7-Si lo que deseas es disfrutar de la naturaleza en su estado puro a través de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n ");
 		scanf("%d", &categoria);
-		
+
 		switch (categoria){
-			case 1: printf("Tenemos a tu disposicion varios modelos que te dejaran satisfecho\n");
-			
-			printf ("\n");
-			printf("OPEL COMBO LIFE \n");
-			printf("El Opel Combo Life es una furgoneta industrial adaptada para pasajeros que esta disponible en dos longitudes.\n Tanto en la version corta como en la version larga es posible llevar 7 asientos individuales, \n pero si vamos a utilizar habitualmente todas las plazas es recomendable optar por la carroceria larga ya que los pasajeros viajaran con mucho mas desahogo en la ultima fila, \n aunque esta carroceria rompa un poco las proporciones exteriores del coche.\n");
-			
-			printf ("\n");
-			printf("PEUGEOT RIFTER \n");
-			printf("El Peugeot Rifter es una de las mejores versiones de pasajeros de una furgoneta que existen ahora mismo. \n Las ventajas de comprarse una furgoneta radican, sobre todo, en el coste de mantenimiento y la fiabilidad y dureza de estos vehiculos.\n Tres sillas infantiles son pan comido para su asiento trasero dividido en tres bloques independientes, y tiene disponibilidad de hasta 7 plazas reales.\n");
-		
-			printf ("\n");
-			printf("FIAT 500L WAGON \n");
-			printf("Tiene a su favor una buena relacion espacio/precio y podemos anadirle interesantes opciones de equipamiento y conectividad que lo convierten en un coche muy razonable para viajes familiares. \n De entre sus motores, la mecanica 0.9 TwinAir de 105 CV probablemente es la estrella por su ajustado consumo y buen rendimiento. \n Para los mas viajeros tambien existen alternativas diesel Multijet de alta eficiencia, pero algo por encima en precios.\n");
-			
-			printf ("\n");
-			printf("RENAULT KANGOO \n");
-			printf("La Renault Kangoo es otra de las posibles furgonetas industriales que se han puesto de moda para ser transformadas en monovolumen de hasta 7 plazas para el transporte de pasajeros. \n La Kangoo es un clasico entre los vehiculos comerciales por su imagen simpatica y su durabilidad. \n");
-			printf ("TOQUE UNA TECLA PARA VOLVER AL MENU \n");
-	    	scanf ("%c", &inicio);
-			break;
-			
-			case 2: printf("Tenemos a tu disposicion varios modelos que te dejaran satisfecho\n");
-			
-		
-			printf ("\n");
-			printf("CITROEN DYANE 6 \n");
-			printf("Aquí podríamos haber puesto un 2CV, pero el problema es que, por un coche objetivamente peor (aunque con mas carisma y simpatia), tendrias que gastar mas del doble.\n El Dyane 6 es un coche que tiene todo lo que posee el 2CV e incluso mas y que puedes conseguir por precios en el entorno de los 3.000 euros,\n casi la mitad de lo que te pedirán por un 2CV en identicas condiciones.\n");
-			
-			printf ("\n");
-			printf("VOLKSWAGEN ESCARABAJO \n");
-			printf("El VW Escarabajo es otro coche con un mantenimiento muy sencillo y que puedes conseguir por precios muy asequibles. \n Como se fabrico muchos años y hay infinidad de versiones, puedes hacerte con un 1.200 en buenas condiciones alrededor de los 3.000 euros, aunque mi consejo si estas iniciandote es que busques un 1303, algo mas confortable y con frenos de disco en el eje delantero, ademas de con una instalacion electrica a 12V. \n");
-			
-			printf ("\n");
-			printf("MINI\n");
-			printf("El Mini es otro coche con una mecanica muy sencilla y para el que es facilisimo encontrar recambios y accesorios. \n Es muy divertido de utilizar. Si te gustan los rallys de regularidad, es una excelente alternativa ya que su tamano hace que las carreteras por las que se suelen realizar estas pruebas parezcan autovias, lo cual es una ventaja.\n");
-			
-			printf ("\n");
-			printf("SEAT 127 \n");
-			printf("Por cifras mucho mas razonables que las que se estan pidiendo por un Panda o un Seat 600 te puedes comprar un Seat 127 que es mucho mas divertido de conducir y mucho mas coche.\n Sus puntos fuertes son su excelente conduccion (te sorprendera lo bien que va, incluso comparado con utilitarios modernos), los costes de mantenimiento y uso (gasta poco) y que puedes hacer tu mismo casi todo el mantenimiento.\n");
-			break;
-			
-			case 3: printf("Te gusta correr pues... \n");
-			
-			printf ("\n");
-			printf("ABARTH 124 SPIDER \n");
-			printf("El Abarth 124 Spider es un modelo que comprarte numerosos elementos con el Mazda MX-5, aunque su enfoque resulta claramente mas deportivo: \n equipa una suspension mas dura, amortiguadores Bilstein, muelles y estabilizadoras de tarado mas exigente y un diferencial autoblocante.\n");
-			
-			printf ("\n");
-			printf("ALPINE A110 \n");
-			printf("Al volante se disfruta al maximo de una conduccion racing, gracias a la ligereza de su chasis de carbono, la resistencia de sus frenos Brembo, \n y el correcto reparto de pesos de su motor central trasero de gasolina 1.8 turbo de 252 CV y cambio automatico de doble embrague. \n");
-			
-			printf ("\n");
-			printf("BMW SERIE 8 COUPE \n");
-			printf("La llamativa carroceria cuenta con un practico porton trasero que da acceso a un maletero de 420 litros de capacidad, ampliable plegando los respaldos de los dos asientos traseros. \n En cuanto a prestaciones, la velocidad maxima esta autolimitada a 250 km/h, pero la aceleracion de 0 a 100 km/h es uno de sus mejores argumentos: 4,9 segundos en el diesel y solo 3,7 segundos en el gasolina. \n");
-			 
-			break;
-			
-			case 4: printf("");
-			
-			printf("\n");
-			printf ("NISSAN MICRA 1.0 \n");
-			printf("Es uno de nuestros coches mas alquilados, facil de matener y fiable. Tambien duro como piedra y perfecto para ciudad. \n Es un cinco plazas con traccion delantera y motor delantero transversal de cuatro cilindros en linea.\n");
-			
-			printf("\n");
-			printf("SEAT IBIZA \n");
-			printf("El Seat Ibiza actual dispone de 5 puertas, 3 cilindros y consigue llegar a los 100 km/h en 14,7 segundos. \n El aspecto mas destacado del Seat Ibiza sobre sus competidores es su mayor capacidad del maletero. \n");
-			
-			printf("\n");
-			printf("RENAULT MEGANE \n");
-			printf("El Renault Megane tiene seis o siete marchas y un consumo muy equilibrado. Es un coche muy dinamico y con diseno deportivo. \n Ademas del volumen de carga de su maletero, el reposabrazos central tiene un hueco con capacidad de 3 litros y una amplia guantera con un volumen de 7,4 litros. \n");
-			
-			printf("\n");
-			printf("PEUGEOT 307 \n");
-			printf("");
-		}
+			case 1: printf("Si necesitas espacio y buen ritmo... te ofrecemos: \n");
+
+				printf ("\n");
+				printf("OPEL COMBO LIFE \n");
+				printf("El Opel Combo Life es una furgoneta industrial adaptada para pasajeros que esta disponible en dos longitudes.\n Tanto en la version corta como en la version larga es posible llevar 7 asientos individuales, \n pero si vamos a utilizar habitualmente todas las plazas es recomendable optar por la carroceria larga ya que los pasajeros viajaran con mucho mas desahogo en la ultima fila, \n aunque esta carroceria rompa un poco las proporciones exteriores del coche.\n");
 	
-		break;
-		case 4: printf("Se debe trabajar en ello \n");
-		break;
+				printf ("\n");
+				printf("PEUGEOT RIFTER \n");
+				printf("El Peugeot Rifter es una de las mejores versiones de pasajeros de una furgoneta que existen ahora mismo. \n Las ventajas de comprarse una furgoneta radican, sobre todo, en el coste de mantenimiento y la fiabilidad y dureza de estos vehiculos.\n Tres sillas infantiles son pan comido para su asiento trasero dividido en tres bloques independientes, y tiene disponibilidad de hasta 7 plazas reales.\n");
+	
+				printf ("\n");
+				printf("FIAT 500L WAGON \n");
+				printf("Tiene a su favor una buena relacion espacio/precio y podemos anadirle interesantes opciones de equipamiento y conectividad que lo convierten en un coche muy razonable para viajes familiares. \n De entre sus motores, la mecanica 0.9 TwinAir de 105 CV probablemente es la estrella por su ajustado consumo y buen rendimiento. \n Para los mas viajeros tambien existen alternativas diesel Multijet de alta eficiencia, pero algo por encima en precios.\n");
+	
+				printf ("\n");
+				printf("RENAULT KANGOO \n");
+				printf("La Renault Kangoo es otra de las posibles furgonetas industriales que se han puesto de moda para ser transformadas en monovolumen de hasta 7 plazas para el transporte de pasajeros. \n La Kangoo es un clasico entre los vehiculos comerciales por su imagen simpatica y su durabilidad. \n");
+
+			break;
+
+			case 2: printf("Las personas que le gustan los clasicos, ¿para que cambiar?\n");
+
+
+				printf ("\n");
+				printf("CITROEN DYANE 6 \n");
+				printf("Aquí podríamos haber puesto un 2CV, pero el problema es que, por un coche objetivamente peor (aunque con mas carisma y simpatia), tendrias que gastar mas del doble.\n El Dyane 6 es un coche que tiene todo lo que posee el 2CV e incluso mas y que puedes conseguir por precios en el entorno de los 3.000 euros,\n casi la mitad de lo que te pedirán por un 2CV en identicas condiciones.\n");
+	
+				printf ("\n");
+				printf("VOLKSWAGEN ESCARABAJO \n");
+				printf("El VW Escarabajo es otro coche con un mantenimiento muy sencillo y que puedes conseguir por precios muy asequibles. \n Como se fabrico muchos años y hay infinidad de versiones, puedes hacerte con un 1.200 en buenas condiciones alrededor de los 3.000 euros, aunque mi consejo si estas iniciandote es que busques un 1303, algo mas confortable y con frenos de disco en el eje delantero, ademas de con una instalacion electrica a 12V. \n");
+	
+				printf ("\n");
+				printf("MINI\n");
+				printf("El Mini es otro coche con una mecanica muy sencilla y para el que es facilisimo encontrar recambios y accesorios. \n Es muy divertido de utilizar. Si te gustan los rallys de regularidad, es una excelente alternativa ya que su tamano hace que las carreteras por las que se suelen realizar estas pruebas parezcan autovias, lo cual es una ventaja.\n");
+	
+				printf ("\n");
+				printf("SEAT 127 \n");
+				printf("Por cifras mucho mas razonables que las que se estan pidiendo por un Panda o un Seat 600 te puedes comprar un Seat 127 que es mucho mas divertido de conducir y mucho mas coche.\n Sus puntos fuertes son su excelente conduccion (te sorprendera lo bien que va, incluso comparado con utilitarios modernos), los costes de mantenimiento y uso (gasta poco) y que puedes hacer tu mismo casi todo el mantenimiento.\n");
+				
+			
+
+	    	
+			break;
+
+			case 3: printf("Elige a que velocidad deseas volar... \n");
+
+				printf ("\n");
+				printf("ABARTH 124 SPIDER \n");
+				printf("El Abarth 124 Spider es un modelo que comprarte numerosos elementos con el Mazda MX-5, aunque su enfoque resulta claramente mas deportivo: \n equipa una suspension mas dura, amortiguadores Bilstein, muelles y estabilizadoras de tarado mas exigente y un diferencial autoblocante.\n");
+	
+				printf ("\n");
+				printf("ALPINE A110 \n");
+				printf("Al volante se disfruta al maximo de una conduccion racing, gracias a la ligereza de su chasis de carbono, la resistencia de sus frenos Brembo, \n y el correcto reparto de pesos de su motor central trasero de gasolina 1.8 turbo de 252 CV y cambio automatico de doble embrague. \n");
+	
+				printf ("\n");
+				printf("BMW SERIE 8 COUPE \n");
+				printf("La llamativa carroceria cuenta con un practico porton trasero que da acceso a un maletero de 420 litros de capacidad, ampliable plegando los respaldos de los dos asientos traseros. \n En cuanto a prestaciones, la velocidad maxima esta autolimitada a 250 km/h, pero la aceleracion de 0 a 100 km/h es uno de sus mejores argumentos: 4,9 segundos en el diesel y solo 3,7 segundos en el gasolina. \n");
+
+
+			
+			break;
+
+			case 4: printf("Para las personas que se conforman con un volante y cuatro ruedas, ¡tenemos lo que buscas! \n");
+
+				printf("\n");
+				printf ("NISSAN MICRA 1.0 \n");
+				printf("Es uno de nuestros coches mas alquilados, facil de matener y fiable. Tambien duro como piedra y perfecto para ciudad. \n Es un cinco plazas con traccion delantera y motor delantero transversal de cuatro cilindros en linea.\n");
+	
+				printf("\n");
+				printf("SEAT IBIZA \n");
+				printf("El Seat Ibiza actual dispone de 5 puertas, 3 cilindros y consigue llegar a los 100 km/h en 14,7 segundos. \n El aspecto mas destacado del Seat Ibiza sobre sus competidores es su mayor capacidad del maletero. \n");
+	
+				printf("\n");
+				printf("RENAULT MEGANE \n");
+				printf("El Renault Megane tiene seis o siete marchas y un consumo muy equilibrado. Es un coche muy dinamico y con diseno deportivo. \n Ademas del volumen de carga de su maletero, el reposabrazos central tiene un hueco con capacidad de 3 litros y una amplia guantera con un volumen de 7,4 litros. \n");
+	
+				printf("\n");
+				printf("KIA PICANTO \n");
+				printf("El Kia Picanto es un urbano de cinco puertas. Esta disponible con un motor de gasolina de un litro y 66 CV, y un equilibrado 1.2 CVVT con 85 CV");
+	
+	    
+	    	
+	    	
+	    	break;
+	    	
+	    	
+			case 5: printf("Ser cero, ahora, suma más que nunca. Con la etiqueta de 0 emisiones de la DGT, podrás conducir por el centro de la ciudad siempre que quieras, además de disfrutar de muchos otros beneficios, descuentos y ayudas dependiendo de la comunidad autónoma en la que te encuentres.\n");
+			
+				printf("\n");
+				printf("PEUGEOT E-208 \n");
+				printf("El nuevo coche urbano PEUGEOT e-208 ofrece una vivacidad y un placer de conduccion estimulante gracias a su motorización 100% electrica y da claramente acceso a una nueva movilidad. \n Carga tu e-208 mas rapido y con total seguridad gracias a nuestra oferta en punto de carga: la carga completa puede reducirse a siete horas y media en un punto de carga de 7,4 kW.");
+				
+				printf("\n");
+				printf("CITROEN E-BERLINGO MULTISPACE \n");
+				printf("El Nuevo E-Berlingo Multispace ofrece toda la polivalencia del Berlingo en el dia a dia, con las ventajas de los coches electricos. \n El Nuevo E-Berlingo Multispace incorpora un motor electrico de altas prestaciones de tipo sincrono con imanes permanentes de 49 kW (67 CV).");
+				
+				printf("\n");
+				printf("BMW i3 \n ");
+				printf("Subete a este vehiculo de 7 plazas y descubre el futuro muy de cerca. \n El BMW i3 esta lleno de tecnologias innovadoras que le permiten dominar la vida diaria.  \n Te conecta con el mundo exterior, te informa, te ayuda a organizarte y te lleva hasta tu destino. \n Siempre listo para la carretera con 6 marchas o automático y además, con un maletero que se puede convertir en dos plazas más.");
+				
+				printf("\n");
+				printf("VOLKSWAGEN ID.3 \n");
+				printf("Directo, potente y sin cambios. \n El ID.3 emociona con su traccion trasera y la potencia de su aceleracion. Vive la emocion de la movilidad electrica desde la salida.");
+				
+				printf("\n");
+				printf("BMW X3 xDrive30e");
+				printf("El BMW X3 xDrive30e acelera en 6,5 segundos de 0 a 100 km/h y alcanza los 135 km/h en modo electrico (210 km/h con el motor gasolina). \n La energia electrica se acumula en una bateria de iones de litio de 12 kWh, capacidad suficiente para recorrer entre 41 y 46 km en modo 100% electrico.");
 		
+	    	
+	    	
+	    	
+	    	break;
+			
+			case 6: printf("Tan sencillo como cargar tu telefono movil...\n");
+			
+				printf("\n");
+				printf("FORD MONDEO HYBRID \n ");
+				printf("El Mondeo es un modelo brillante desde el punto de vista dinamico y por habitabilidad en las plazas traseras, aunque en esta variante híbrida el maletero se reduce de 550 a 383 litros en la variante de cuatro puertas. Su propulsor gasolina-electrico de 187 CV, aparejado a una caja de cambios automatica, de seis velocidades, combina unos consumos muy ajustados");
+				
+				printf("\n");
+				printf("HYUNDAI IONIQ \n ");
+				printf("El Hyundai y las versiones hibridas combinan un motor eléctrico con otro 1.6 de gasolina, para entregar un total de 141 CV.");
+				
+				printf("\n");
+				printf("HONDA CR-V HYBRID \n ");
+				printf("El Honda recurre a la tecnología i-MMD, siglas de Intelligent Multi-Mode Drive-, que consta de cuatro partes esenciales:\n un motor de gasolina de 2.0 litros, un propulsor electrico, un generador; y una batería de iones de litio, con una capacidad aproximada de 1 kWh. \n Este sistema consta con tres modos de funcionamiento: 100% electrico, hibrido y solo con el motor de combustion.");
+				
+				printf("\n");
+				printf("TOYOTA CAMRY \n");
+				printf("Este Toyota comparte plataforma modular TNGA-K con el Lexus ES, mientras que el motor híbrido de 218 CV es idéntico al que monta el Toyota RAV4 hybrid. \n Este propulsor se asocia a un cambio automatico de tipo CVT y a la tracción delantera y, gracias a su condicion hibrida, permite al Camry homologar un consumo medio de 5,3 litros/100 km segun el ciclo WLTP. \n");
+				
+				printf("\n");
+				printf("TOYOTA CH-R \n");
+				printf("El Toyota C-HR se ha convertido en todo un Exito de ventas desde su lanzamiento.  \n ADEMAS, mantiene la version 1.8 Hybrid de 122 CV y anade la mas potente 2.0 Hybrid de 184 CV. \n ");
+			
+	    	break;
+			
+		}
+
+		break;
+		case 4: 
+			printf("Se debe trabajar en ello \n");
+		
+		break;
+
 		case 5:
-		printf("Somos una empresa especializada en el alquiler de automoviles a nivel nacional\n Nos preocupamos de proporcionar a nuestros clientes el mejor precio y la mejor opcion de alquiler para de su viaje \n");
+			printf("Somos una empresa especializada en el alquiler de automoviles a nivel nacional\n Nos preocupamos de proporcionar a nuestros clientes el mejor precio y la mejor opcion de alquiler para de su viaje. \n");
 		break;
 		
-		default : printf("ERROR, NUMERO INCORRECTO"); 
-		
+		case 6:
+			printf("Salir del menu \n");
+
+		default : 
+			printf("NO HA SELECIONADO NINGUNA OPCION VALIDA, POR FAVOR, INTENTELO DE NUEVO \n"); 
+
+	} while (opcion !=6);
 	}
-} while (opcion>5);
 }
