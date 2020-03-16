@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define coches 25 //Coches disponibles
 #define patines 5 //Patines electricos
 //No se como poner el %  cuando digo 100% si escribo 100PORCIEN queda un poco mal
@@ -22,53 +23,63 @@ int main (){
 	scanf("%d", &opcion);
 
 	switch (opcion){
-		case 1: printf("SE VA A LLEVAR A CABO SU REGISTRO: \n");
-		printf("Introduzca su nombre y apellidos: \n");
-		fflush (stdin);
-		scanf("%c", &nombre);
-		fflush (stdin);
-		printf("Introduzca un correo operativo, este a su vez sera su NOMBRE DE USUARIO: \n");
-		scanf("%c", &correo);
-		fflush (stdin);
-		printf("Introduzca una contrasena: \n");
-		scanf("%c", &contra);
-		fflush (stdin);
-		printf("Introduzca su domicilio: \n");
-		scanf("%c", &domicilio);
-		fflush (stdin);
-		printf("Introduzca su poblacion: \n");
-		scanf("%c", &poblacion);
-		fflush (stdin);
-		printf("Introduzca su codigo postal: \n");
-		scanf("%c", &codPos);
-		fflush (stdin);
-		printf("Por ultimo introduzca su telefono movil: \n");
-		scanf("%c", &telefono);
-		printf("Su registro se ha realizado con exito \n");
+		case 1: 
+			printf("SE VA A LLEVAR A CABO SU REGISTRO: \n");
+			printf("Introduzca su nombre y apellidos: \n");
+			fflush (stdin);
+			scanf("%c", &nombre);
+			fflush (stdin);
+			printf("Introduzca un correo operativo, este a su vez sera su NOMBRE DE USUARIO: \n");
+			scanf("%c", &correo);
+			fflush (stdin);
+			printf("Introduzca una contrasena: \n");
+			scanf("%c", &contra);
+			fflush (stdin);
+			printf("Introduzca su domicilio: \n");
+			scanf("%c", &domicilio);
+			fflush (stdin);
+			printf("Introduzca su poblacion: \n");
+			scanf("%c", &poblacion);
+			fflush (stdin);
+			printf("Introduzca su codigo postal: \n");
+			scanf("%c", &codPos);
+			fflush (stdin);
+			printf("Por ultimo introduzca su telefono movil: \n");
+			scanf("%c", &telefono);
+			printf("Su registro se ha realizado con exito \n");
+			
+			system("PAUSE()");
+			system("CLS()");
+			
 		break;
 
 
-		case 2: printf("INICIA TU SESION \n");
-		fflush (stdin);
-		printf("Introduzca su correo o nombre de usuario:\n");
-		scanf("%c", &correo);
-		fflush (stdin);
-		printf("Introduzca la contrasena:\n");
-		scanf("%c", &contra);
-		printf ("TOQUE UNA TECLA PARA VOLVER AL MENU \n");
-		scanf ("%c", &inicio);
+		case 2: 
+			printf("INICIA TU SESION \n");
+			fflush (stdin);
+			printf("Introduzca su correo o nombre de usuario:\n");
+			scanf("%c", &correo);
+			fflush (stdin);
+			printf("Introduzca la contrasena:\n");
+			scanf("%c", &contra);
+			printf ("TOQUE UNA TECLA PARA VOLVER AL MENU \n");
+			scanf ("%c", &inicio);
+			
+			system("PAUSE()");
+			system("CLS()");
 		break;
 
-		case 3: printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n", coches); 
-		printf ("SELECCIONE UNA DE LAS CATEGORIAS \n");
-		printf ("1-Si buscas un viaje de grupo o sois una familia numerosa y siempre os falta espacio tenemos vuestra solucion  \n");
-		printf ("2-Si eres un fan de los clasicos no dudes en elegir esta opcion \n");
-		printf ("3-Si lo que te gusta es volar y lo tuyo son los coches deportivos aqui encontraras lo que buscas \n");
-		printf ("4-Si buscas lo mas barato y comodo te damos las mejores opciones \n");
-		printf ("5-Si estas a la moda y optas por un coche electrico es aqui donde debes buscar \n");
-		printf ("6-Si lo que quieres es un coche que no suene para que no se entere nadie de que te vas, esta es tu opcion \n");
-		printf ("7-Si lo que deseas es oler el ambiente madrileno a través de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n ");
-		scanf("%d", &categoria);
+		case 3: 
+			printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n", coches); 
+			printf ("SELECCIONE UNA DE LAS CATEGORIAS \n");
+			printf ("1-Si buscas un viaje de grupo o sois una familia numerosa y siempre os falta espacio tenemos vuestra solucion  \n");
+			printf ("2-Si eres un fan de los clasicos no dudes en elegir esta opcion \n");
+			printf ("3-Si lo que te gusta es volar y lo tuyo son los coches deportivos aqui encontraras lo que buscas \n");
+			printf ("4-Si buscas lo mas barato y comodo te damos las mejores opciones \n");
+			printf ("5-Si estas a la moda y optas por un coche electrico es aqui donde debes buscar \n");
+			printf ("6-Si lo que quieres es un coche que no suene para que no se entere nadie de que te vas, esta es tu opcion \n");
+			printf ("7-Si lo que deseas es oler el ambiente madrileno a través de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n ");
+			scanf("%d", &categoria);
 
 		switch (categoria){
 			case 1: printf("Si necesitas espacio y buen ritmo... te ofrecemos: \n");
@@ -88,10 +99,14 @@ int main (){
 				printf ("\n");
 				printf("RENAULT KANGOO \n");
 				printf("La Renault Kangoo es otra de las posibles furgonetas industriales que se han puesto de moda para ser transformadas en monovolumen de hasta 7 plazas para el transporte de pasajeros. \n La Kangoo es un clasico entre los vehiculos comerciales por su imagen simpatica y su durabilidad. \n");
-
+				
+				system("PAUSE()");
+				system("CLS()");
+				
 			break;
 
-			case 2: printf("Las personas que le gustan los clasicos, ¿para que cambiar?\n");
+			case 2: 
+				printf("Las personas que le gustan los clasicos, ¿para que cambiar?\n");
 
 
 				printf ("\n");
@@ -110,12 +125,14 @@ int main (){
 				printf("SEAT 127 \n");
 				printf("Por cifras mucho mas razonables que las que se estan pidiendo por un Panda o un Seat 600 te puedes comprar un Seat 127 que es mucho mas divertido de conducir y mucho mas coche.\n Sus puntos fuertes son su excelente conduccion (te sorprendera lo bien que va, incluso comparado con utilitarios modernos), los costes de mantenimiento y uso (gasta poco) y que puedes hacer tu mismo casi todo el mantenimiento.\n");
 				
-			
+				system("PAUSE()");
+				system("CLS()");
 
 	    	
 			break;
 
-			case 3: printf("Elige a que velocidad deseas volar... \n");
+			case 3: 
+				printf("Elige a que velocidad deseas volar... \n");
 
 				printf ("\n");
 				printf("ABARTH 124 SPIDER \n");
@@ -128,12 +145,15 @@ int main (){
 				printf ("\n");
 				printf("BMW SERIE 8 COUPE \n");
 				printf("La llamativa carroceria cuenta con un practico porton trasero que da acceso a un maletero de 420 litros de capacidad, ampliable plegando los respaldos de los dos asientos traseros. \n En cuanto a prestaciones, la velocidad maxima esta autolimitada a 250 km/h, pero la aceleracion de 0 a 100 km/h es uno de sus mejores argumentos: 4,9 segundos en el diesel y solo 3,7 segundos en el gasolina. \n");
-
+				
+				system("PAUSE()");
+				system("CLS()");
 
 			
 			break;
 
-			case 4: printf("Para las personas que se conforman con un volante y cuatro ruedas, ¡tenemos lo que buscas! \n");
+			case 4: 
+				printf("Para las personas que se conforman con un volante y cuatro ruedas, ¡tenemos lo que buscas! \n");
 
 				printf("\n");
 				printf ("NISSAN MICRA 1.0 \n");
@@ -151,13 +171,15 @@ int main (){
 				printf("KIA PICANTO \n");
 				printf("El Kia Picanto es un urbano de cinco puertas. Esta disponible con un motor de gasolina de un litro y 66 CV, y un equilibrado 1.2 CVVT con 85 CV\n");
 	
-	    
+	    		system("PAUSE()");
+				system("CLS()");
 	    	
 	    	
 	    	break;
 	    	
 	    	
-			case 5: printf("Ser cero, ahora, suma mas que nunca. Con la etiqueta de 0 emisiones de la DGT, podras conducir por el centro de la ciudad siempre que quieras, ademas de disfrutar de muchos otros beneficios, descuentos y ayudas dependiendo de la comunidad autonoma en la que te encuentres.\n");
+			case 5: 
+				printf("Ser cero, ahora, suma mas que nunca. Con la etiqueta de 0 emisiones de la DGT, podras conducir por el centro de la ciudad siempre que quieras, ademas de disfrutar de muchos otros beneficios, descuentos y ayudas dependiendo de la comunidad autonoma en la que te encuentres.\n");
 			
 				printf("\n");
 				printf("PEUGEOT E-208 \n");
@@ -178,7 +200,9 @@ int main (){
 				printf("\n");
 				printf("BMW X3 xDrive30e");
 				printf("El BMW X3 xDrive30e acelera en 6,5 segundos de 0 a 100 km/h y alcanza los 135 km/h en modo electrico (210 km/h con el motor gasolina). \n La energia electrica se acumula en una bateria de iones de litio de 12 kWh, capacidad suficiente para recorrer entre 41 y 46 km en modo 100PORCIEN electrico.\n");
-		
+				
+				system("PAUSE()");
+				system("CLS()");
 	    	
 	    	
 	    	
@@ -205,7 +229,9 @@ int main (){
 				printf("\n");
 				printf("TOYOTA CH-R \n");
 				printf("El Toyota C-HR se ha convertido en todo un Exito de ventas desde su lanzamiento.  \n ADEMAS, mantiene la version 1.8 Hybrid de 122 CV y anade la mas potente 2.0 Hybrid de 184 CV. \n ");
-			
+				
+				system("PAUSE()");
+				system("CLS()");
 	    	break;
 	    	
 	    	case 7: printf("¡Sobre dos ruedas y desarollando el olfato! \n ");
@@ -233,26 +259,38 @@ int main (){
 	    		printf("Xiaomi Mi Electric Scooter Pro");
 	    		printf("Olvidate de mirar cuanta bateria te queda. El fabricante asegura que en condiciones optimas se pueden alcanzar los 45 km de autonomia.\n Ademas cuenta con: Frenos de disco ABS antiderrapaje \n Freno delantero regenerativo\n Autonomia.");
 	    	
-	    	break;
+	    		system("PAUSE()");
+				system("CLS()");
+				
+			break;
 		}
 
 		break;
 		case 4: 
 			printf("Se debe trabajar en ello \n");
+			
+			system("PAUSE()");
+			system("CLS()");
 		
 		break;
 
 		case 5:
 			printf("Somos una empresa especializada en el alquiler de automoviles a nivel nacional\n Nos preocupamos de proporcionar a nuestros clientes el mejor precio y la mejor opcion de alquiler para de su viaje. \n");
+			system("PAUSE()");
+			system("CLS()");
+				
 		break;
 		
 		case 6:
 			printf("Salir del menu \n");
+			system("PAUSE()");
+			system("CLS()");
 		break;	
 
 		default : 
 			printf("NO HA SELECIONADO NINGUNA OPCION VALIDA, POR FAVOR, INTENTELO DE NUEVO"); 
-
+			system("PAUSE()");
+			system("CLS()");
 		} 
 	} while (opcion!=6);
 }
