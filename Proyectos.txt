@@ -1,6 +1,6 @@
 PROYECTOS:
 
-REGISTRO:
+REGISTRO: (NO LO COPIA EN EL FICHERO usuarios.txt) --> NO SOLUCIONADO
 
 	- Contraseña que contenga al menos un numero y una mayuscula, y que sea mas larga de 5 digitos (hecho) 
 	
