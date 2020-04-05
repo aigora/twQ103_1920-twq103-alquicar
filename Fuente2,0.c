@@ -60,7 +60,7 @@ int main (){
 			fflush (stdin);
 			gets(usuario[contUsuarios].nombre);
 			fflush (stdin);
-			/*do{ 
+			do{ 
 			printf("Introduzca un correo operativo, este a su vez sera su NOMBRE DE USUARIO: \n");
 			gets(usuario[contUsuarios].correo);
 			i=0;
@@ -73,7 +73,7 @@ int main (){
 				}
 				i++;
 			}
-			}while (arrobas!=1 );*/
+			}while (arrobas!=1 || puntos<1 );
 			fflush (stdin);
 			do{
 			printf("Introduzca una contrasena: \n");
