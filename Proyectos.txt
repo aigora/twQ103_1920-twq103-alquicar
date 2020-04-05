@@ -8,7 +8,7 @@ REGISTRO:
 	
 	-codigo postal debe tener los 5 numeros (hecho)
 	
-	-correo debe tener el @ y un punto para ser valido (revisar) -> BUCLE INFINITO
+	-correo debe tener el @ y un punto para ser valido (hecho) 
 
 	Los codigos con (revisar) se debe a error en el manejo de cadenas dentro de vectores de estructuras
 
