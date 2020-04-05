@@ -10,6 +10,8 @@ REGISTRO: (NO LO COPIA EN EL FICHERO usuarios.txt) --> NO SOLUCIONADO
 	
 	-correo debe tener el @ y un punto para ser valido (hecho) 
 
+LOGING: (AUN NO ESTA PLANTEADO)
+
 STOCK DE COCHES:
 
 
