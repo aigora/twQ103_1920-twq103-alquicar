@@ -64,6 +64,8 @@ int main (){
 			printf("Introduzca un correo operativo, este a su vez sera su NOMBRE DE USUARIO: \n");
 			gets(usuario[contUsuarios].correo);
 			i=0;
+			arrobas=0;
+			puntos=0;
 			while (usuario[contUsuarios].correo[i]!='\0'){
 				if (usuario[contUsuarios].correo[i]=='@'){
 					arrobas++;
@@ -80,6 +82,8 @@ int main (){
 			if(error>0) printf("La contraseña debe tner una mayuscula, un numero y mas de 5 caracteres\n");
 			gets(usuario[contUsuarios].contra);
 			i=0;
+			num=0;
+			mayus=0;
 			while(usuario[contUsuarios].contra[i]!='\0'){
 				if (usuario[contUsuarios].contra[i]>'0'&& usuario[contUsuarios].contra[i]<'9'){
 				num++;
