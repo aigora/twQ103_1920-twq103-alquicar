@@ -1,0 +1,17 @@
+PROYECTOS:
+
+REGISTRO:
+
+	- Contraseña que contenga al menos un numero y una mayuscula, y que sea mas larga de 5 digitos (revisar) -> NO FUNCIONAN LAS CONDICIONES
+	
+	-numero de telefono tiene que tener los 9 numeros (hecho)
+	
+	-codigo postal debe tener los 5 numeros (hecho)
+	
+	-correo debe tener el @ y un punto para ser valido (revisar) -> BUCLE INFINITO
+
+	Los codigos con (revisar) se debe a error en el manejo de cadenas dentro de vectores de estructuras
+
+STOCK DE COCHES:
+
+
