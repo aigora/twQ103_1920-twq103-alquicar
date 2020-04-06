@@ -6,8 +6,8 @@
 
 
 struct coches{
-	char stock; //los que tenemos
-	char reserva; //los que hay que quitar del fichero de stock
+	char stock[100]; //los que tenemos
+	char reserva[100]; //los que hay que quitar del fichero de stock
 	
 };
 struct registro{
@@ -17,10 +17,13 @@ struct registro{
 
 
 int main (){
-	int opcion, categoria,inicio,i;
+	int opcion, categoria,inicio,i,permiso=0;
 	int arrobas=0,puntos=0,error=0, mayus=0, num=0;
 	struct registro usuario[100];
 	int contUsuarios=0;
+	//DATOS LOGING
+	int salirlog;
+	char contra[20],correo[100];
 	struct coches coches[100];
 	FILE * pUsuarios;
 	
@@ -138,20 +141,45 @@ int main (){
 		break;
 
 
-		/*case 2: 
-			printf("INICIA TU SESION \n");
+		case 2: 
+			do{
+				if(error!=0){
+					printf("ERROR AL INICIAR SESION\n");
+					printf("EL CORREO Y LA CONTRASEÑA NO COINCIDEN, INTENTELO DE NUEVO:\n");
+					printf("Si no quieres iniciar sesion pulse 1\n");
+					printf("En caso contrario pulse 2\n");
+					scanf("%d",&salirlog);
+					if(salirlog==1){
+						break;
+					}
+				}
+				else{printf("INICIA TU SESION \n");
+				}
 			fflush (stdin);
 			printf("Introduzca su correo o nombre de usuario:\n");
-			scanf("%c", &correo);
+			gets(correo);
 			fflush (stdin);
 			printf("Introduzca la contrasena:\n");
-			scanf("%c", &contra);
+			gets(contra);
+			//COMPROBACION DE LOGING:
+			for(i=0;i<contUsuarios;i++){
+				permiso=0;
+				if(strcmp(correo,usuario[i].correo)==0)
+				permiso++;
+				if(strcmp(contra,usuario[i].contra)==0)
+				permiso++;
+				if(permiso==2)
+				break;
+			}
+			error++;
+			}while(permiso!=2);
+			error=0;
 			printf ("TOQUE UNA TECLA PARA VOLVER AL MENU \n");
 			scanf ("%c", &inicio);
 			
 			system("PAUSE()");
 			system("CLS()");
-		break;*/
+		break;
 
 		case 3: 
 			printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n\n", coches); 
@@ -351,7 +379,12 @@ int main (){
 
 		break;
 		case 4: 
-			printf("Se debe trabajar en ello \n");
+			if(permiso==2){
+				printf("Hay que trabajar en ello\n");
+			}
+			else{
+			printf("DEBES REGISTRARTE O INICIAR SESION PARA ENTRAR EN  ESTA CATEGORIA\n");	
+			}
 			
 			system("PAUSE()");
 			system("CLS()");
