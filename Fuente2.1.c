@@ -4,6 +4,7 @@
 
 //No se como poner el %  cuando digo 100% si escribo 100PORCIEN queda un poco mal
 
+
 struct coches{
 	char stock; //los que tenemos
 	char reserva; //los que hay que quitar del fichero de stock
@@ -22,16 +23,18 @@ int main (){
 	int contUsuarios=0;
 	struct coches coches[100];
 	FILE * pUsuarios;
+	
 	printf ("BIENVENIDO A ALQUICAR \n"); 
 	printf("Le mostraremos a continuacion el menu:\n\n");
 	//system ("clc"); (limpia la pantalla)
+	
 	
 		pUsuarios = fopen("usuarios.txt","r");
 	if (pUsuarios == NULL){ 
 		printf("No se encuentra fichero");
 		return 0;
 		}
-	while(	fscanf(pUsuarios, "%s %s %s %s %d %d", usuario[contUsuarios].nombre,usuario[contUsuarios].correo,usuario[contUsuarios].contra,usuario[contUsuarios].poblacion,&usuario[contUsuarios].codPos,&usuario[contUsuarios].telefono) != EOF){ 
+	while(fscanf(pUsuarios, "%s %s %s %s %d %d", usuario[contUsuarios].nombre,usuario[contUsuarios].correo,usuario[contUsuarios].contra,usuario[contUsuarios].poblacion,&usuario[contUsuarios].codPos,&usuario[contUsuarios].telefono) != EOF){ 
 		//Para ver los Usuarios registrados activa el siguiente printf
 		//printf(%s %s %s %s %d %d, usuario[contUsuarios].nombre,usuario[contUsuarios].correo,usuario[contUsuarios].contra,usuario[contUsuarios].poblacion,&usuario[contUsuarios].codPos,&usuario[contUsuarios].telefono);
 		contUsuarios++;
@@ -43,14 +46,14 @@ int main (){
 	
 	do{
 
-	printf ("SELECCIONE UNA DE LAS SIGUIENTES OPCIONES \n");
-	printf ("1-REGISTRARSE \n\n");
-	printf ("2-INICIAR SESION \n\n");
-	printf ("3-VER CATALOGO \n\n"); /*No es necesario registrarse para verlo*/
-	printf ("4-MIS RESERVAS \n\n"); /* Es obligatorio el registro para hacer reservas*/
-	printf ("5-QUIENES SOMOS \n\n");
-	printf ("6-CERRAR MENU \n\n");
-	scanf("%d", &opcion);
+		printf ("SELECCIONE UNA DE LAS SIGUIENTES OPCIONES \n");
+		printf ("1-REGISTRARSE \n\n");
+		printf ("2-INICIAR SESION \n\n");
+		printf ("3-VER CATALOGO \n\n"); /*No es necesario registrarse para verlo*/
+		printf ("4-MIS RESERVAS \n\n"); /* Es obligatorio el registro para hacer reservas*/
+		printf ("5-QUIENES SOMOS \n\n");
+		printf ("6-CERRAR MENU \n\n");
+		scanf("%d", &opcion);
 
 
 	switch (opcion){
@@ -60,6 +63,7 @@ int main (){
 			fflush (stdin);
 			gets(usuario[contUsuarios].nombre);
 			fflush (stdin);
+			
 			do{ 
 			printf("Introduzca un correo operativo, este a su vez sera su NOMBRE DE USUARIO: \n");
 			gets(usuario[contUsuarios].correo);
@@ -73,54 +77,56 @@ int main (){
 				else if (usuario[contUsuarios].correo[i]=='.'){
 					puntos++;
 				}
-				i++;
-			}
+					i++;
+				}
 			}while (arrobas!=1 || puntos<1 );
-			fflush (stdin);
+				fflush (stdin);
 			do{
-			printf("Introduzca una contrasena: \n");
-			if(error>0) printf("La contraseña debe tner una mayuscula, un numero y mas de 5 caracteres\n");
-			gets(usuario[contUsuarios].contra);
-			i=0;
-			num=0;
-			mayus=0;
-			while(usuario[contUsuarios].contra[i]!='\0'){
-				if (usuario[contUsuarios].contra[i]>'0'&& usuario[contUsuarios].contra[i]<'9'){
-				num++;
-				}
-				if(usuario[contUsuarios].contra[i]>'A'&& usuario[contUsuarios].contra[i]<'Z'){
-				mayus++;
-				}
-				i++;
-			}error++;
-			}while(num>0 && mayus>0 && strlen(usuario[contUsuarios].contra)<5);
-			fflush (stdin);
-			printf("Introduzca su poblacion: \n"); //sin espacios
-			scanf("%c", &usuario[contUsuarios].poblacion);
-			fflush (stdin);
+				printf("Introduzca una contrasena: \n");
+				if(error>0) 	
+					printf("La contraseña debe tener una mayuscula, un numero y mas de 5 caracteres\n");
+					gets(usuario[contUsuarios].contraseña);
+					i=0;
+					num=0;
+					mayus=0;
+				while(usuario[contUsuarios].contra[i]!='\0'){
+					if (usuario[contUsuarios].contraseña[i]>'0'&& usuario[contUsuarios].contraseña[i]<'9'){
+					num++;
+					}
+					if(usuario[contUsuarios].contraseña[i]>'A'&& usuario[contUsuarios].contraseña[i]<'Z'){
+					mayus++;
+					}
+					i++;
+				} 
+				error++;
+			} while(num>0 && mayus>0 && strlen(usuario[contUsuarios].contraseña)<5);
+				fflush (stdin);
+				printf("Introduzca su poblacion: \n"); //sin espacios
+				scanf("%c", &usuario[contUsuarios].poblacion);
+				fflush (stdin);
 			do{
-			printf("Introduzca su codigo postal: \n");
-			if(error>0) printf("El codigo postal debe ser valido\n");
-			scanf("%s", &usuario[contUsuarios].codPos);
-			error++;
+				printf("Introduzca su codigo postal: \n");
+				if(error>0) printf("El codigo postal debe ser valido\n");
+					scanf("%s", &usuario[contUsuarios].codPos);
+					error++;
 			}while(strlen(usuario[contUsuarios].codPos)!=5);
-			fflush (stdin);
-			error=0;
+				fflush (stdin);
+				error=0;
 			do{
 			printf("Por ultimo introduzca su telefono movil: \n");
 			if(error>0) printf("El numero introducido debe ser valido\n");
-			scanf("%s", &usuario[contUsuarios].telefono);
-			error++;
+				scanf("%s", &usuario[contUsuarios].telefono);
+				error++;
 			}while(strlen(usuario[contUsuarios].telefono)!=9);
 			printf("Su registro se ha realizado con exito \n");
 			
 			pUsuarios = fopen("usuarios.txt","w");
 		if (pUsuarios == NULL){ 
-		printf("No se encuentra fichero");
-		return 0;
+			printf("No se encuentra fichero");
+			return 0;
 		}
 		for(i=0;i<=contUsuarios;i++){
-		fprintf(pUsuarios, "%s %s %s %s %s %s", usuario[i].nombre,usuario[i].correo,usuario[i].contra,usuario[i].poblacion,usuario[i].codPos,usuario[i].telefono);
+			fprintf(pUsuarios, "%s %s %s %s %s %s", usuario[i].nombre,usuario[i].correo,usuario[i].contra,usuario[i].poblacion,usuario[i].codPos,usuario[i].telefono);
 		}
 		fclose(pUsuarios);
 			
