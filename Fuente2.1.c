@@ -34,7 +34,8 @@ int main (){
 		printf("No se encuentra fichero");
 		return 0;
 		}
-	while(fscanf(pUsuarios, "%s %s %s %s %d %d", usuario[contUsuarios].nombre,usuario[contUsuarios].correo,usuario[contUsuarios].contra,usuario[contUsuarios].poblacion,&usuario[contUsuarios].codPos,&usuario[contUsuarios].telefono) != EOF){ 
+	contUsuarios=0;
+	while(fscanf(pUsuarios, "%s %s %s %s %s %s", usuario[contUsuarios].nombre,usuario[contUsuarios].correo,usuario[contUsuarios].contra,usuario[contUsuarios].poblacion,&usuario[contUsuarios].codPos,&usuario[contUsuarios].telefono) != EOF){ 
 		//Para ver los Usuarios registrados activa el siguiente printf
 		//printf(%s %s %s %s %d %d, usuario[contUsuarios].nombre,usuario[contUsuarios].correo,usuario[contUsuarios].contra,usuario[contUsuarios].poblacion,&usuario[contUsuarios].codPos,&usuario[contUsuarios].telefono);
 		contUsuarios++;
@@ -90,20 +91,21 @@ int main (){
 					num=0;
 					mayus=0;
 				while(usuario[contUsuarios].contra[i]!='\0'){
-					if (usuario[contUsuarios].contraseña[i]>'0'&& usuario[contUsuarios].contraseña[i]<'9'){
+					if (usuario[contUsuarios].contra[i]>'0'&& usuario[contUsuarios].contra[i]<'9'){
 					num++;
 					}
-					if(usuario[contUsuarios].contraseña[i]>'A'&& usuario[contUsuarios].contraseña[i]<'Z'){
+					if(usuario[contUsuarios].contra[i]>'A'&& usuario[contUsuarios].contra[i]<'Z'){
 					mayus++;
 					}
 					i++;
 				} 
 				error++;
-			} while(num>0 && mayus>0 && strlen(usuario[contUsuarios].contraseña)<5);
+			} while(num<=0 || mayus<=0 || strlen(usuario[contUsuarios].contra)<5);
 				fflush (stdin);
 				printf("Introduzca su poblacion: \n"); //sin espacios
-				scanf("%c", &usuario[contUsuarios].poblacion);
+				scanf("%s", &usuario[contUsuarios].poblacion);
 				fflush (stdin);
+				error=0;
 			do{
 				printf("Introduzca su codigo postal: \n");
 				if(error>0) printf("El codigo postal debe ser valido\n");
@@ -126,7 +128,7 @@ int main (){
 			return 0;
 		}
 		for(i=0;i<=contUsuarios;i++){
-			fprintf(pUsuarios, "%s %s %s %s %s %s", usuario[i].nombre,usuario[i].correo,usuario[i].contra,usuario[i].poblacion,usuario[i].codPos,usuario[i].telefono);
+			fprintf(pUsuarios, "%s %s %s %s %s %s\n", usuario[i].nombre,usuario[i].correo,usuario[i].contra,usuario[i].poblacion,usuario[i].codPos,usuario[i].telefono);
 		}
 		fclose(pUsuarios);
 			
