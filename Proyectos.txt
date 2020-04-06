@@ -12,7 +12,7 @@ REGISTRO: (NO LO COPIA EN EL FICHERO usuarios.txt) --> SOLUCIONADO
 
 LOGING: (AUN NO ESTA PLANTEADO)
 	
-	-Permita la entrada al apartado de reservas (no hecho)
+	-Permita la entrada al apartado de reservas (hecho) -> SI TE REGISTRAS NO TE DEJA ENTRAR A RESERVAS (ya que el registro no se 			guarda hasta que no se cierra el programa)
 	
 	-Permita reservar (no hecho)
 
