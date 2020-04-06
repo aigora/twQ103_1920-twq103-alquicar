@@ -1,6 +1,6 @@
 PROYECTOS:
 
-REGISTRO: (NO LO COPIA EN EL FICHERO usuarios.txt) --> NO SOLUCIONADO
+REGISTRO: (NO LO COPIA EN EL FICHERO usuarios.txt) --> SOLUCIONADO
 
 	- Contraseña que contenga al menos un numero y una mayuscula, y que sea mas larga de 5 digitos (hecho) 
 	
@@ -11,7 +11,12 @@ REGISTRO: (NO LO COPIA EN EL FICHERO usuarios.txt) --> NO SOLUCIONADO
 	-correo debe tener el @ y un punto para ser valido (hecho) 
 
 LOGING: (AUN NO ESTA PLANTEADO)
+	
+	-Permita la entrada al apartado de reservas (no hecho)
+	
+	-Permita reservar (no hecho)
 
 STOCK DE COCHES:
 
+	-hacer sistema de reservas (si se reserva el coche cambia del vector "stock" al "reserva") (no hecho)
 
