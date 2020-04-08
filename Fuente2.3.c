@@ -22,7 +22,7 @@ int main (){
 	struct registro usuario[100];
 	int contUsuarios=0;
 	//DATOS LOGING
-	int salirlog;
+	int salirlog,j; //la j da la posicion en el fichero del usuario que se ha logueado
 	char contra[20],correo[100];
 	struct coches coches[100];
 	FILE * pUsuarios;
@@ -50,7 +50,7 @@ int main (){
 	
 	do{
 
-		printf ("SELECCIONE UNA DE LAS SIGUIENTES OPCIONES \n");
+		printf ("SELECCIONE UNA DE LAS SIGUIENTES OPCIONES \n\n");
 		printf ("1-REGISTRARSE \n\n");
 		printf ("2-INICIAR SESION \n\n");
 		printf ("3-VER CATALOGO \n\n"); /*No es necesario registrarse para verlo*/
@@ -142,6 +142,7 @@ int main (){
 
 
 		case 2: 
+			error=0;
 			do{
 				if(error!=0){
 					printf("ERROR AL INICIAR SESION\n");
@@ -162,11 +163,11 @@ int main (){
 			printf("Introduzca la contrasena:\n");
 			gets(contra);
 			//COMPROBACION DE LOGING:
-			for(i=0;i<contUsuarios;i++){
+			for(j=0;j<contUsuarios;j++){
 				permiso=0;
-				if(strcmp(correo,usuario[i].correo)==0)
+				if(strcmp(correo,usuario[j].correo)==0)
 				permiso++;
-				if(strcmp(contra,usuario[i].contra)==0)
+				if(strcmp(contra,usuario[j].contra)==0)
 				permiso++;
 				if(permiso==2)
 				break;
@@ -174,6 +175,7 @@ int main (){
 			error++;
 			}while(permiso!=2);
 			error=0;
+			printf ("SE HA LOGUEADO CORRECTAMENTE, BIENVENIDO %s\n", usuario[j].nombre);
 			printf ("TOQUE UNA TECLA PARA VOLVER AL MENU \n");
 			scanf ("%c", &inicio);
 			
@@ -383,7 +385,7 @@ int main (){
 				printf("Hay que trabajar en ello\n");
 			}
 			else{
-			printf("DEBES REGISTRARTE O INICIAR SESION PARA ENTRAR EN  ESTA CATEGORIA\n");	
+			printf("DEBES INICIAR SESION PARA ENTRAR EN  ESTA CATEGORIA\n");	
 			}
 			
 			system("PAUSE()");
