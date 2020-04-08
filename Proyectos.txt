@@ -10,9 +10,9 @@ REGISTRO: (NO LO COPIA EN EL FICHERO usuarios.txt) --> SOLUCIONADO
 	
 	-correo debe tener el @ y un punto para ser valido (hecho) 
 
-LOGING: (AUN NO ESTA PLANTEADO)
+LOGING: (SI SE REGISTRA SE TIENE QUE LOGUEAR DESPUES)
 	
-	-Permita la entrada al apartado de reservas (hecho) -> SI TE REGISTRAS NO TE DEJA ENTRAR A RESERVAS (ya que el registro no se 			guarda hasta que no se cierra el programa)
+	-Permita la entrada al apartado de reservas (hecho)
 	
 	-Permita reservar (no hecho)
 
