@@ -20,3 +20,6 @@ STOCK DE COCHES:
 
 	-hacer sistema de reservas (si se reserva el coche cambia del vector "stock" al "reserva") (no hecho)
 
+GENERAL:
+	
+	- Cambiar los printf("\n") por un \n\n en la linea anterior, ya que hace lo mismo (no hecho)
