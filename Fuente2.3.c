@@ -88,7 +88,7 @@ int main (){
 			do{
 				printf("Introduzca una contrasena: \n");
 				if(error>0) 	
-					printf("La contrasena debe tener una mayuscula, un numero y mas de 5 caracteres\n");
+					printf("La contraseña debe tener una mayuscula, un numero y mas de 5 caracteres\n");
 					gets(usuario[contUsuarios].contra);
 					i=0;
 					num=0;
@@ -135,6 +135,7 @@ int main (){
 		}
 		fclose(pUsuarios);
 			
+			
 			system("PAUSE()");
 			system("CLS()");
 			
@@ -148,7 +149,7 @@ int main (){
 					printf("ERROR AL INICIAR SESION\n");
 					printf("EL CORREO Y LA CONTRASENA NO COINCIDEN, INTENTELO DE NUEVO:\n");
 					printf("Si no quieres iniciar sesion pulse 1\n");
-					printf("En caso contrario pulse cualquier otro digito\n");
+					printf("En caso contrario pulse cualquier otra letra\n");
 					scanf("%d",&salirlog);
 					if(salirlog==1){
 						break;
@@ -163,7 +164,7 @@ int main (){
 			printf("Introduzca la contrasena:\n");
 			gets(contra);
 			//COMPROBACION DE LOGING:
-			for(j=0;j<contUsuarios;j++){
+			for(j=0;j<=contUsuarios;j++){
 				permiso=0;
 				if(strcmp(correo,usuario[j].correo)==0)
 				permiso++;
@@ -192,7 +193,7 @@ int main (){
 			printf ("4-Si buscas lo mas barato y comodo te damos las mejores opciones \n\n");
 			printf ("5-Si estas a la moda y optas por un coche electrico es aqui donde debes buscar \n\n");
 			printf ("6-Si lo que quieres es un coche que no suene para que no se entere nadie de que te vas, esta es tu opcion \n\n");
-			printf ("7-Si lo que deseas es oler el ambiente madrileno a traves de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n\n ");
+			printf ("7-Si lo que deseas es oler el ambiente madrileno a través de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n\n ");
 			scanf("%d", &categoria);
 
 		switch (categoria){
