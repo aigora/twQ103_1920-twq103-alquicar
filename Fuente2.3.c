@@ -148,7 +148,7 @@ int main (){
 					printf("ERROR AL INICIAR SESION\n");
 					printf("EL CORREO Y LA CONTRASEÑA NO COINCIDEN, INTENTELO DE NUEVO:\n");
 					printf("Si no quieres iniciar sesion pulse 1\n");
-					printf("En caso contrario pulse 2\n");
+					printf("En caso contrario pulse cualquier otro digito\n");
 					scanf("%d",&salirlog);
 					if(salirlog==1){
 						break;
