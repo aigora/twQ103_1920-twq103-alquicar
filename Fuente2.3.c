@@ -88,7 +88,7 @@ int main (){
 			do{
 				printf("Introduzca una contrasena: \n");
 				if(error>0) 	
-					printf("La contraseña debe tener una mayuscula, un numero y mas de 5 caracteres\n");
+					printf("La contrasena debe tener una mayuscula, un numero y mas de 5 caracteres\n");
 					gets(usuario[contUsuarios].contra);
 					i=0;
 					num=0;
@@ -146,7 +146,7 @@ int main (){
 			do{
 				if(error!=0){
 					printf("ERROR AL INICIAR SESION\n");
-					printf("EL CORREO Y LA CONTRASEÑA NO COINCIDEN, INTENTELO DE NUEVO:\n");
+					printf("EL CORREO Y LA CONTRASENA NO COINCIDEN, INTENTELO DE NUEVO:\n");
 					printf("Si no quieres iniciar sesion pulse 1\n");
 					printf("En caso contrario pulse cualquier otro digito\n");
 					scanf("%d",&salirlog);
@@ -192,7 +192,7 @@ int main (){
 			printf ("4-Si buscas lo mas barato y comodo te damos las mejores opciones \n\n");
 			printf ("5-Si estas a la moda y optas por un coche electrico es aqui donde debes buscar \n\n");
 			printf ("6-Si lo que quieres es un coche que no suene para que no se entere nadie de que te vas, esta es tu opcion \n\n");
-			printf ("7-Si lo que deseas es oler el ambiente madrileno a través de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n\n ");
+			printf ("7-Si lo que deseas es oler el ambiente madrileno a traves de los nuevos patines electricos con tu familia o grupo de amig@s, ¡adelante! \n\n ");
 			scanf("%d", &categoria);
 
 		switch (categoria){
