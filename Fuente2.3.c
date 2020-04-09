@@ -89,7 +89,7 @@ int main (){
 				printf("Introduzca una contrasena: \n");
 				if(error>0) 	
 					printf("La contraseña debe tener una mayuscula, un numero y mas de 5 caracteres\n");
-					gets(usuario[contUsuarios].contraseña);
+					gets(usuario[contUsuarios].contra);
 					i=0;
 					num=0;
 					mayus=0;
