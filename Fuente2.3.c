@@ -8,7 +8,7 @@
 struct coches{
 	char stock[100]; //los que tenemos
 	char reserva[100]; //los que hay que quitar del fichero de stock
-	
+	char comprador[100];
 };
 struct registro{
 	char nombre[50],correo[100],contra[100],poblacion[20];
@@ -17,7 +17,8 @@ struct registro{
 
 
 int main (){
-	int opcion, categoria,inicio,i,permiso=0;
+	int opcion, categoria,inicio,i,ncoches;
+	int permiso=0; //Comprueba que se ha logueado
 	int arrobas=0,puntos=0,error=0, mayus=0, num=0;
 	struct registro usuario[100];
 	int contUsuarios=0;
@@ -25,7 +26,10 @@ int main (){
 	int salirlog,j; //la j da la posicion en el fichero del usuario que se ha logueado
 	char contra[20],correo[100];
 	struct coches coches[100];
+	int coche; //indica la posicion del coche que se quiere reservar en el fichero
+	int aceptar; //acepta la reserva
 	FILE * pUsuarios;
+	FILE * pCoches;
 	
 	printf ("BIENVENIDO A ALQUICAR \n"); 
 	printf("Le mostraremos a continuacion el menu:\n\n");
@@ -158,7 +162,7 @@ int main (){
 				else{printf("INICIA TU SESION \n");
 				}
 			fflush (stdin);
-			printf("Introduzca su correo o nombre de usuario:\n");
+			printf("Introduzca su correo:\n");
 			gets(correo);
 			fflush (stdin);
 			printf("Introduzca la contrasena:\n");
@@ -183,9 +187,20 @@ int main (){
 			system("PAUSE()");
 			system("CLS()");
 		break;
-
+		//CREAMOS VECTOR DE COCHES (REVISAR) -> NO CUENTA LOS COCHES
+		pCoches = fopen("coches.txt","r");
+	if (pCoches == NULL){ 
+		printf("No se encuentra fichero");
+		return 0;
+		}
+		ncoches=0;
+		while(fscanf(pCoches, "%s %s", coches[ncoches].stock,coches[ncoches].comprador)!= EOF){ //Lee el fichero y lo copia en un vector
+				ncoches++;
+		}
+		fclose(pCoches);
+	
 		case 3: 
-			printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n\n", coches); 
+			printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n\n", ncoches); //SI SE RESERVA HAY QUE CAMBIARLO
 			printf ("SELECCIONE UNA DE LAS CATEGORIAS: \n");
 			printf ("1-Si buscas un viaje de grupo o sois una familia numerosa y siempre os falta espacio tenemos vuestra solucion  \n\n");
 			printf ("2-Si eres un fan de los clasicos no dudes en elegir esta opcion \n\n");
@@ -197,12 +212,13 @@ int main (){
 			scanf("%d", &categoria);
 
 		switch (categoria){
-			case 1: printf("Si necesitas espacio y buen ritmo... te ofrecemos: \n");
+			case 1: system("CLS()");
+			printf("Si necesitas espacio y buen ritmo... te ofrecemos: \n");
 
 				printf ("\n");
 				printf("OPEL COMBO LIFE \n");
 				printf("El Opel Combo Life es una furgoneta industrial adaptada para pasajeros que esta disponible en dos longitudes.\n Tanto en la version corta como en la version larga es posible llevar 7 asientos individuales, \n pero si vamos a utilizar habitualmente todas las plazas es recomendable optar por la carroceria larga ya que los pasajeros viajaran con mucho mas desahogo en la ultima fila, \n aunque esta carroceria rompa un poco las proporciones exteriores del coche.\n");
-	
+				
 				printf ("\n");
 				printf("PEUGEOT RIFTER \n");
 				printf("El Peugeot Rifter es una de las mejores versiones de pasajeros de una furgoneta que existen ahora mismo. \n Las ventajas de comprarse una furgoneta radican, sobre todo, en el coste de mantenimiento y la fiabilidad y dureza de estos vehiculos.\n Tres sillas infantiles son pan comido para su asiento trasero dividido en tres bloques independientes, y tiene disponibilidad de hasta 7 plazas reales.\n");
@@ -213,14 +229,48 @@ int main (){
 	
 				printf ("\n");
 				printf("RENAULT KANGOO \n");
-				printf("La Renault Kangoo es otra de las posibles furgonetas industriales que se han puesto de moda para ser transformadas en monovolumen de hasta 7 plazas para el transporte de pasajeros. \n La Kangoo es un clasico entre los vehiculos comerciales por su imagen simpatica y su durabilidad. \n");
+				printf("La Renault Kangoo es otra de las posibles furgonetas industriales que se han puesto de moda para ser transformadas en monovolumen de hasta 7 plazas para el transporte de pasajeros. \n La Kangoo es un clasico entre los vehiculos comerciales por su imagen simpatica y su durabilidad. \n\n");
+				
+				printf("Si ya te has decidido, puedes reservar marcando una de las siguientes opciones:\n\n");
+				if(permiso!=2) printf("DEBE INICIAR SESION PARA HACER UNA RESERVA\n");
+				else{
+				printf("PULSA 1 para reservar:OPEL COMBO LIFE\n\n");
+				printf("PULSA 2 para reservar:PEUGEOT RIFTER\n\n");
+				printf("PULSA 3 para reservar:FIAT 500L WAGON\n\n");
+				printf("PULSA 4 para reservar:RENAULT KANGOO\n\n");
+				error=0;
+				do{
+					if(error!=0) printf("Vuelve a seleccionar el coche deseado\n");
+					scanf("%d", &coche);
+					printf("Ha seleccionado el %s\n\n", coches[coche].stock);
+					printf("METER CARACTERISTICAS\n\n");
+					printf("¿Está seguro de hacer su reserva?, si es asi pulse 1, en caso contrario pulse otra tecla\n");
+					scanf("%c", &aceptar);
+					error++;
+					if (aceptar ==1){
+							pCoches = fopen("coches.txt","w");
+						if (pCoches == NULL){ 
+							printf("No se encuentra fichero");
+							return 0;
+							}
+						for(i=0;i<=ncoches;i++){
+						if(i==coche)
+						fprintf(pCoches, "%s %s\n",coches[i].stock, usuario[j].correo);
+						else
+						fprintf(pCoches, "%s\n", coches[i].stock);
+						}
+						fclose(pCoches);
+					}	
+					
+				}while(aceptar!=1);
+				}
 				
 				system("PAUSE()");
 				system("CLS()");
 				
 			break;
 
-			case 2: 
+			case 2: system("CLS()");
 				printf("Las personas que le gustan los clasicos, ¿para que cambiar?\n");
 
 
@@ -246,7 +296,7 @@ int main (){
 	    	
 			break;
 
-			case 3: 
+			case 3: system("CLS()");
 				printf("Elige a que velocidad deseas volar... \n");
 
 				printf ("\n");
@@ -267,7 +317,7 @@ int main (){
 			
 			break;
 
-			case 4: 
+			case 4: system("CLS()");
 				printf("Para las personas que se conforman con un volante y cuatro ruedas, ¡tenemos lo que buscas! \n");
 
 				printf("\n");
@@ -293,7 +343,7 @@ int main (){
 	    	break;
 	    	
 	    	
-			case 5: 
+			case 5: system("CLS()");
 				printf("Ser cero, ahora, suma mas que nunca. Con la etiqueta de 0 emisiones de la DGT, podras conducir por el centro de la ciudad siempre que quieras, ademas de disfrutar de muchos otros beneficios, descuentos y ayudas dependiendo de la comunidad autonoma en la que te encuentres.\n");
 			
 				printf("\n");
@@ -323,7 +373,8 @@ int main (){
 	    	
 	    	break;
 			
-			case 6: printf("Tan sencillo como cargar tu telefono movil...\n");
+			case 6:system("CLS()");
+			 printf("Tan sencillo como cargar tu telefono movil...\n");
 			
 				printf("\n");
 				printf("FORD MONDEO HYBRID \n ");
@@ -349,7 +400,8 @@ int main (){
 				system("CLS()");
 	    	break;
 	    	
-	    	case 7: printf("¡Sobre dos ruedas y desarollando el olfato! \n ");
+	    	case 7: system("CLS()");
+			printf("¡Sobre dos ruedas y desarollando el olfato! \n ");
 	    	
 	    		printf("\n");
 	    		printf("M MegaWheels S5");
