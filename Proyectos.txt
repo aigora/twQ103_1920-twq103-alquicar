@@ -19,6 +19,8 @@ LOGING: (SI SE REGISTRA SE TIENE QUE LOGUEAR DESPUES)
 STOCK DE COCHES:
 
 	-hacer sistema de reservas (si se reserva el coche cambia del vector "stock" al "reserva") (no hecho)
+	
+	-tras seleccionar el coche que se quiera reservar, indicar más caracteristicas (pueden ser textos ya escritos en un fichero) (no hecho)
 
 GENERAL:
 	
