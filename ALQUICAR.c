@@ -188,19 +188,22 @@ int main (){
 			system("PAUSE()");
 			system("CLS()");
 		break;
-		//CREAMOS VECTOR DE COCHES (REVISAR) -> NO CUENTA LOS COCHES
+	
+		case 3: 
+			//CREAMOS VECTOR DE COCHES (REVISAR) -> NO CUENTA LOS COCHES
 		pCoches = fopen("coches.txt","r");
-	if (pCoches == NULL){ 
+		if (pCoches == NULL){ 
 		printf("No se encuentra fichero");
 		return 0;
 		}
 		ncoches=0;
-		while(fscanf(pCoches, "%s %s", coches[ncoches].stock,coches[ncoches].comprador)!= EOF){ //Lee el fichero y lo copia en un vector
+		while(fscanf(pCoches, "%s", coches[ncoches].stock)!= EOF){ //Lee el fichero y lo copia en un vector
 				ncoches++;
 		}
 		fclose(pCoches);
-	
-		case 3: 
+			
+			
+			
 			printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n\n", ncoches); //SI SE RESERVA HAY QUE CAMBIARLO
 			printf ("SELECCIONE UNA DE LAS CATEGORIAS: \n");
 			printf ("1-Si buscas un viaje de grupo o sois una familia numerosa y siempre os falta espacio tenemos vuestra solucion  \n\n");
@@ -241,26 +244,32 @@ int main (){
 				printf("PULSA 4 para reservar:RENAULT KANGOO\n\n");
 				error=0;
 				do{
-					if(error!=0) printf("Vuelve a seleccionar el coche deseado\n");
+						if(error!=0) {
+						printf("Vuelve a seleccionar el coche deseado\n");
+					}
 					scanf("%d", &coche);
-					printf("Ha seleccionado el %s\n\n", coches[coche].stock);
+					printf("Ha seleccionado el %s\n\n", coches[coche-1].stock);
 					printf("METER CARACTERISTICAS\n\n");
-					printf("¿Está seguro de hacer su reserva?, si es asi pulse 1, en caso contrario pulse otra tecla\n");
-					scanf("%c", &aceptar);
+					printf("¿Esta seguro de hacer su reserva?, si es asi pulse 1, en caso contrario pulse otra tecla\n");
+					scanf("%d", &aceptar);
 					error++;
-					if (aceptar ==1){
+					
+					
+				}while(aceptar!=1);
+				if (aceptar ==1){
 							pCoches = fopen("coches.txt","w");
 						if (pCoches == NULL){ 
 							printf("No se encuentra fichero");
 							return 0;
 							}
 						for(i=0;i<=ncoches;i++){
-						if(i==coche)
+						if(i==coche-1)
 						fprintf(pCoches, "%s %s\n",coches[i].stock, usuario[j].correo);
 						else
 						fprintf(pCoches, "%s\n", coches[i].stock);
 						}
 						fclose(pCoches);
+					}	
 					}	
 					
 				}while(aceptar!=1);
@@ -409,7 +418,7 @@ int main (){
 	    		printf("Este es el patinete electrico tope de gama de la marca Megawheels. \n  Tiene una autonomia bastante correcta: 18-20km, con 2-3 horas de carga. \n Para esto incorpora un sistema de recuperacion de ahorro de energia: cuando conduces el patinete, al accionar los frenos y al soltar el acelerador, activan este sistema. \n A traves de este sistema la energia cinetica producida se convierte en energía electrica que se almacena de nuevo en la bateria. \n Se pliega en menos de 5 segundos y se lleva muy fácilmente en la mano (12,5 kg) gracias a un aluminio muy resistente.");
 	    		
 	    		printf("\n");
-	    		printf("IWatRoad R9/Ecogyro GScooter S9");
+	    		printf("IWatRoad R9");
 	    		printf("¡Para todos, incluso hasta los mas pequeños! Incorpora dos programas que limitan la velocidad máxima hasta 15 y 25 km/h. \n De esta forma, se lo puedes dejar a tu hijo sin problema o regular la velocidad si vas por una avenida peatonal. ");
 	    		
 	    		
