@@ -9,6 +9,8 @@ REGISTRO: (NO LO COPIA EN EL FICHERO usuarios.txt) --> SOLUCIONADO
 	-codigo postal debe tener los 5 numeros (hecho)
 	
 	-correo debe tener el @ y un punto para ser valido (hecho) 
+	
+	-comprobar que en el nombre y en la ciudad no se escriben espacios (no hecho)
 
 LOGING: (SI SE REGISTRA SE TIENE QUE LOGUEAR DESPUES)
 	
