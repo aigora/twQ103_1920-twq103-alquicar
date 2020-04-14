@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-//No se como poner el %  cuando digo 100% si escribo 100PORCIEN queda un poco mal
+//Para poner 100% 
+ //   printf("100%c\n", 37);
 
 
 struct coches{
