@@ -27,3 +27,6 @@ STOCK DE COCHES:
 GENERAL:
 	
 	- Cambiar los printf("\n") por un \n\n en la linea anterior, ya que hace lo mismo (no hecho)
+
+	Hacer la fianza de los coches 
+	Añadir el seguro 
