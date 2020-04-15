@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-//Para poner 100% 
- //   printf("100%c\n", 37);
+//No se como poner el %  cuando digo 100% si escribo 100PORCIEN queda un poco mal
 
 
 struct coches{
@@ -29,8 +28,10 @@ int main (){
 	struct coches coches[100];
 	int coche; //indica la posicion del coche que se quiere reservar en el fichero
 	int aceptar; //acepta la reserva
+	int nreservas=0,t; //cuenta las reservas
 	FILE * pUsuarios;
 	FILE * pCoches;
+	FILE * pReservas;
 	
 	printf ("BIENVENIDO A ALQUICAR \n"); 
 	printf("Le mostraremos a continuacion el menu:\n\n");
@@ -188,23 +189,33 @@ int main (){
 			system("PAUSE()");
 			system("CLS()");
 		break;
+		
 	
 		case 3: 
-			//CREAMOS VECTOR DE COCHES (REVISAR) -> NO CUENTA LOS COCHES
+		//CREAMOS VECTOR DE COCHES (REVISAR) -> NO CUENTA LOS COCHES
 		pCoches = fopen("coches.txt","r");
-		if (pCoches == NULL){ 
+	if (pCoches == NULL){ 
 		printf("No se encuentra fichero");
 		return 0;
 		}
 		ncoches=0;
-		while(fscanf(pCoches, "%s", coches[ncoches].stock)!= EOF){ //Lee el fichero y lo copia en un vector
+		while(fscanf(pCoches, "%s ", coches[ncoches].stock)!= EOF){ //Lee el fichero y lo copia en un vector
 				ncoches++;
+			
 		}
 		fclose(pCoches);
-			
-			
-			
-			printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n\n", ncoches); //SI SE RESERVA HAY QUE CAMBIARLO
+		pReservas = fopen("reservas.txt", "r");
+								if (pReservas == NULL){ 
+									printf("No se encuentra fichero");
+									return 0;
+									}
+							while(fscanf(pReservas, "%s %s", coches[nreservas].reserva, coches[nreservas].comprador)!= EOF){ //Lee el fichero y lo copia en un vector
+								nreservas++;
+								}
+							nreservas=nreservas/2;
+		
+		
+			printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n\n", ncoches-nreservas); 
 			printf ("SELECCIONE UNA DE LAS CATEGORIAS: \n");
 			printf ("1-Si buscas un viaje de grupo o sois una familia numerosa y siempre os falta espacio tenemos vuestra solucion  \n\n");
 			printf ("2-Si eres un fan de los clasicos no dudes en elegir esta opcion \n\n");
@@ -244,11 +255,11 @@ int main (){
 				printf("PULSA 4 para reservar:RENAULT KANGOO\n\n");
 				error=0;
 				do{
-						if(error!=0) {
+					if(error!=0) {
 						printf("Vuelve a seleccionar el coche deseado\n");
 					}
 					scanf("%d", &coche);
-					printf("Ha seleccionado el %s\n\n", coches[coche-1].stock);
+					printf("Ha seleccionado el %s\n\n", coches[coche-1].stock); //SI PONE RESERVADO HAY QUE IMPEDIR LA RESERVA
 					printf("METER CARACTERISTICAS\n\n");
 					printf("¿Esta seguro de hacer su reserva?, si es asi pulse 1, en caso contrario pulse otra tecla\n");
 					scanf("%d", &aceptar);
@@ -263,16 +274,25 @@ int main (){
 							return 0;
 							}
 						for(i=0;i<=ncoches;i++){
-						if(i==coche-1)
-						fprintf(pCoches, "%s %s\n",coches[i].stock, usuario[j].correo);
+						if(i==coche-1){
+								pReservas = fopen("reservas.txt", "w");
+								if (pReservas == NULL){ 
+									printf("No se encuentra fichero");
+									return 0;
+									}
+								strcpy(coches[nreservas].reserva,coches[coche-1].stock); // el coche seleccionado es la ultima reserva que tiene que copiar
+								strcpy(coches[nreservas].comprador,usuario[j].correo); // el usuario registrado es el ultimo en copiarse
+							for (t=0;t<=nreservas;t++){
+							fprintf(pReservas, "%s %s", coches[t].reserva, coches[t].comprador );	// TIENE QUE ESCRIBIR LAS RESERVAS en reservas.txt
+							}
+						fprintf(pCoches, "RESERVADO\n");
+						}
 						else
 						fprintf(pCoches, "%s\n", coches[i].stock);
 						}
 						fclose(pCoches);
+						fclose(pReservas);
 					}	
-					}	
-					
-				}while(aceptar!=1);
 				}
 				
 				system("PAUSE()");
