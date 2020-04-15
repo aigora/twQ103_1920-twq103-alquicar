@@ -484,7 +484,7 @@ int main (){
 		break;
 		
 		case 6:
-			printf("Salir del menu \n");
+			printf("Salir del menu \n Su sesion se cerrara automaticamente \n");
 			system("PAUSE()");
 			system("CLS()");
 		break;	
