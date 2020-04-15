@@ -69,9 +69,16 @@ int main (){
 	switch (opcion){
 		case 1: 
 			printf("SE VA A LLEVAR A CABO SU REGISTRO: \n");
-			printf("Introduzca su nombre y apellidos sin espacios: \n");
+			printf("Introduzca su nombre y apellidos: \n");
 			fflush (stdin);
 			gets(usuario[contUsuarios].nombre);
+			i=0;
+			while (usuario[contUsuarios].nombre[i]!='\0'){
+				if(usuario[contUsuarios].nombre[i]==' '){
+					usuario[contUsuarios].nombre[i]='_';
+				}
+				i++;
+			}
 			fflush (stdin);
 			
 			do{ 
@@ -112,7 +119,14 @@ int main (){
 			} while(num<=0 || mayus<=0 || strlen(usuario[contUsuarios].contra)<5);
 				fflush (stdin);
 				printf("Introduzca su poblacion: \n"); //sin espacios
-				scanf("%s", &usuario[contUsuarios].poblacion);
+				scanf("%s", usuario[contUsuarios].poblacion);
+				i=0;
+			while (usuario[contUsuarios].poblacion[i]!='\0'){
+				if(usuario[contUsuarios].poblacion[i]==' '){
+					usuario[contUsuarios].poblacion[i]='_';
+				}
+				i++;
+			}
 				fflush (stdin);
 				error=0;
 			do{
@@ -192,9 +206,9 @@ int main (){
 		
 	
 		case 3: 
-		//CREAMOS VECTOR DE COCHES (REVISAR) -> NO CUENTA LOS COCHES
+		//CREAMOS VECTOR DE COCHES (REVISAR) 
 		pCoches = fopen("coches.txt","r");
-	if (pCoches == NULL){ 
+		if (pCoches == NULL){ 
 		printf("No se encuentra fichero");
 		return 0;
 		}
@@ -211,8 +225,10 @@ int main (){
 									}
 							while(fscanf(pReservas, "%s %s", coches[nreservas].reserva, coches[nreservas].comprador)!= EOF){ //Lee el fichero y lo copia en un vector
 								nreservas++;
+								
 								}
-							nreservas=nreservas/2;
+								
+							
 		
 		
 			printf("ESTE ES NUESTRO CATALOGO, HAY %d COCHES DISPONIBLES\n\n", ncoches-nreservas); 
@@ -261,7 +277,7 @@ int main (){
 					scanf("%d", &coche);
 					printf("Ha seleccionado el %s\n\n", coches[coche-1].stock); //SI PONE RESERVADO HAY QUE IMPEDIR LA RESERVA
 					printf("METER CARACTERISTICAS\n\n");
-					printf("¿Esta seguro de hacer su reserva?, si es asi pulse 1, en caso contrario pulse otra tecla\n");
+					printf("Esta seguro de hacer su reserva, si es asi pulse 1, en caso contrario pulse otro NUMERO\n"); //si no es un numero no funciona
 					scanf("%d", &aceptar);
 					error++;
 					
@@ -283,7 +299,7 @@ int main (){
 								strcpy(coches[nreservas].reserva,coches[coche-1].stock); // el coche seleccionado es la ultima reserva que tiene que copiar
 								strcpy(coches[nreservas].comprador,usuario[j].correo); // el usuario registrado es el ultimo en copiarse
 							for (t=0;t<=nreservas;t++){
-							fprintf(pReservas, "%s %s", coches[t].reserva, coches[t].comprador );	// TIENE QUE ESCRIBIR LAS RESERVAS en reservas.txt
+							fprintf(pReservas, "%s %s\n", coches[t].reserva, coches[t].comprador );	// TIENE QUE ESCRIBIR LAS RESERVAS en reservas.txt
 							}
 						fprintf(pCoches, "RESERVADO\n");
 						}
