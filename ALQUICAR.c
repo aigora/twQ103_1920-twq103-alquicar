@@ -33,6 +33,27 @@ int main (){
 	FILE * pCoches;
 	FILE * pReservas;
 	
+	printf("        AAA           LLL              QQQ           UU     UU   IIIIIIII             \n");
+	printf("\n");  
+	printf("    AAA    AAA        LLL          QQQ     QQQ       UU     UU      II                \n");
+	printf("\n");
+	printf("  AAA        AAA      LLL        QQQ	 \\    QQQ    UU     UU      II                \n");
+	printf("\n");
+	printf(" AAA    AAA    AAA    LLL          QQQ     QQQ       UU     UU      II                \n");
+	printf("\n");
+	printf("AAA             AAA   LLL LLL LLL       QQQ    \\       UU UU     IIIIIIII             \n"); 
+	     	printf("\n");
+		 printf("\n");
+	printf("    CCC CCC           AAA        RRR  RRR         \n "); 
+	printf("\n");
+	printf("  CCC              AAA  AAA      RRR     RRR      \n ");
+	printf("\n");
+	printf("CCC              AAA      AAA    RRR  RRR         \n ");
+	printf("\n");
+	printf("  CCC          AAA   AAA    AAA  RRR     RRR      \n ");
+	printf("\n");
+	printf("    CCC CCC  AAA             AAA RRR        RRR   \n ");
+	
 	printf ("BIENVENIDO A ALQUICAR \n"); 
 	printf("Le mostraremos a continuacion el menu:\n\n");
 	//system ("clc"); (limpia la pantalla)
