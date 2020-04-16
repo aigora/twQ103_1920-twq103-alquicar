@@ -500,9 +500,28 @@ int main (){
 		break;
 		
 		case 6:
-			printf("Salir del menu \n Su sesion se cerrara automaticamente \n");
-			system("PAUSE()");
-			system("CLS()");
+			
+			printf("¿usted seguro que desea salir de la aplicacion?\n");
+			
+			printf("1.SI \n");
+			printf("2.NO \n");
+				do{
+					scanf("%i",&salir);	
+					if(salir<1 || salir>2){
+							printf("Opcion no valida\n");
+					}
+					}while(salir<1 || salir>2);
+						if(salir==1){
+							printf("Sesion cerrada con exito, hasta pronto");
+							return 0;
+						}else{
+							system("cls");
+						}
+						break;
+		
+		default: printf("Opcion no valida\n");
+		system("pause");
+		system("cls");
 		break;	
 
 		default : 
