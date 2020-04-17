@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+//No se como poner el %  cuando digo 100% si escribo 100PORCIEN queda un poco mal
 
 
 struct coches{
@@ -17,6 +17,7 @@ struct registro{
 
 
 int main (){
+	system ("color 3f" );
 	int opcion, categoria,inicio,i,ncoches;
 	int permiso=0; //Comprueba que se ha logueado
 	int arrobas=0,puntos=0,error=0, mayus=0, num=0;
@@ -27,34 +28,26 @@ int main (){
 	char contra[20],correo[100];
 	struct coches coches[100];
 	int coche; //indica la posicion del coche que se quiere reservar en el fichero
-	int aceptar; //acepta la reserva
+	char aceptar; //acepta la reserva
 	int nreservas=0,t; //cuenta las reservas
 	FILE * pUsuarios;
 	FILE * pCoches;
 	FILE * pReservas;
 	
-	printf("        AAA           LLL              QQQ           UU     UU   IIIIIIII             \n");
-	printf("\n");  
-	printf("    AAA    AAA        LLL          QQQ     QQQ       UU     UU      II                \n");
-	printf("\n");
-	printf("  AAA        AAA      LLL        QQQ	 \\    QQQ    UU     UU      II                \n");
-	printf("\n");
-	printf(" AAA    AAA    AAA    LLL          QQQ     QQQ       UU     UU      II                \n");
-	printf("\n");
-	printf("AAA             AAA   LLL LLL LLL       QQQ    \\       UU UU     IIIIIIII             \n"); 
-	     	printf("\n");
-		 printf("\n");
-	printf("    CCC CCC           AAA        RRR  RRR         \n "); 
-	printf("\n");
-	printf("  CCC              AAA  AAA      RRR     RRR      \n ");
-	printf("\n");
-	printf("CCC              AAA      AAA    RRR  RRR         \n ");
-	printf("\n");
-	printf("  CCC          AAA   AAA    AAA  RRR     RRR      \n ");
-	printf("\n");
-	printf("    CCC CCC  AAA             AAA RRR        RRR   \n ");
 	
-	printf ("BIENVENIDO A ALQUICAR \n"); 
+	printf("                      _______ ______ _______ _____  __________________________ ________    \n");
+    printf("           ||     |  ___    |___  / __  _  |__  / / /____  _/__  ____/___    |___  __ |  | \n");
+	printf("      .----|-----,|  __  /| |__  /  _  / / /_  / / /  __  /  _  /     __  /| |__  /_/ /  | \n");
+	printf("      ||  ||   ==||  _  ___ |_  /___/ /_/ / / /_/ /  __/ /   / /___   _  ___ |_  _, _/   | \n");
+	printf(" .-----'--'|   ==||  /_/  |_|/_____/\___|_|   \____/   /___/   |____/   /_/  |_|/_/ |_|    | \n");
+	printf(" |)-      ~|     ||______________________________________________________________________| \n");
+	printf(" | ___     |     |____...==..._  >                  |______________________________|       \n");
+	printf("[_/.-.\'--''-------- |/.-.  .-.\\/                     |/            || .-.  .-. ||        \n");
+	printf("  ( o )`===''''''''''`( o )( o )                     o              `( o )( o )`         \n");
+	printf("   '-'                 '-'  '-'                                       '-'  '-'           \n");
+	printf("\n\n");
+	
+	
 	printf("Le mostraremos a continuacion el menu:\n\n");
 	//system ("clc"); (limpia la pantalla)
 	
@@ -298,13 +291,13 @@ int main (){
 					scanf("%d", &coche);
 					printf("Ha seleccionado el %s\n\n", coches[coche-1].stock); //SI PONE RESERVADO HAY QUE IMPEDIR LA RESERVA
 					printf("METER CARACTERISTICAS\n\n");
-					printf("Esta seguro de hacer su reserva, si es asi pulse 1, en caso contrario pulse otro NUMERO\n"); //si no es un numero no funciona
-					scanf("%d", &aceptar);
+					printf("Esta seguro de hacer su reserva, si es asi pulse 1, en caso contrario pulse otro numero\n");
+					scanf("%c", &aceptar);
 					error++;
 					
 					
-				}while(aceptar!=1);
-				if (aceptar ==1){
+				}while(aceptar!='1');
+				if (aceptar =='1'){
 							pCoches = fopen("coches.txt","w");
 						if (pCoches == NULL){ 
 							printf("No se encuentra fichero");
@@ -521,28 +514,9 @@ int main (){
 		break;
 		
 		case 6:
-			
-			printf("¿usted seguro que desea salir de la aplicacion?\n");
-			
-			printf("1.SI \n");
-			printf("2.NO \n");
-				do{
-					scanf("%i",&salir);	
-					if(salir<1 || salir>2){
-							printf("Opcion no valida\n");
-					}
-					}while(salir<1 || salir>2);
-						if(salir==1){
-							printf("Sesion cerrada con exito, hasta pronto");
-							return 0;
-						}else{
-							system("cls");
-						}
-						break;
-		
-		default: printf("Opcion no valida\n");
-		system("pause");
-		system("cls");
+			printf("Salir del menu \n Su sesion se cerrara automaticamente \n");
+			system("PAUSE()");
+			system("CLS()");
 		break;	
 
 		default : 
