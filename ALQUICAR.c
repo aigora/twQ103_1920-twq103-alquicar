@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-//No se como poner el %  cuando digo 100% si escribo 100PORCIEN queda un poco mal
-
 
 struct coches{
 	char stock[100]; //los que tenemos
