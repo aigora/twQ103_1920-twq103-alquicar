@@ -28,6 +28,7 @@ int main (){
 	int coche; //indica la posicion del coche que se quiere reservar en el fichero
 	int aceptar; //acepta la reserva
 	int nreservas=0,t; //cuenta las reservas
+	int correcto; //comprueba las reservas de cada usuario (apartado "Mis reservas")
 	FILE * pUsuarios;
 	FILE * pCoches;
 	FILE * pReservas;
@@ -994,7 +995,23 @@ int main (){
 		break;
 		case 4: 
 			if(permiso==2){
-				printf("Hay que trabajar en ello\n");
+				pReservas = fopen ("reservas.txt", "r");
+					if (pReservas == NULL){ 
+						printf("No se encuentra fichero");
+						return 0;
+						}
+			i=0;
+			while(fscanf(pReservas, "%s %s", coches[i].reserva, coches[i].comprador)!= EOF){
+				correcto=1;
+				correcto=strcmp(usuario[j].correo,coches[i].comprador);
+				if (correcto==0){
+					printf("Hola, %s, ahora mismo tienes reservado el: %s\n", coches[i].comprador, coches[i].reserva);
+				}
+				i++;
+			}
+			
+			
+			
 			}
 			else{
 			printf("DEBES INICIAR SESION PARA ENTRAR EN  ESTA CATEGORIA\n");	
