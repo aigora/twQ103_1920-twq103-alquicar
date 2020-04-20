@@ -806,27 +806,27 @@ int main (){
 					printf("Ha seleccionado el %s\n\n", coches[coche-1].stock); //SI PONE RESERVADO HAY QUE IMPEDIR LA RESERVA
 					switch (coche){
 						case 21: 
-							printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("El Mondeo es un modelo brillante desde el punto de vista dinamico y por habitabilidad en las plazas traseras, aunque en esta variante híbrida el maletero se reduce de 550 a 383 litros en la variante de cuatro puertas. Su propulsor gasolina-electrico de 187 CV, aparejado a una caja de cambios automatica, de seis velocidades, combina unos consumos muy ajustados.\n");
 							system("PAUSE()");
 							break;
 							
 						case 22:
-						printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("El Hyundai y las versiones hibridas combinan un motor electrico con otro 1.6 de gasolina, para entregar un total de 141 CV.\n");
 							system("PAUSE()");
 							break;
 							
 						case 23: 
-							printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("El Honda recurre a la tecnologia i-MMD, siglas de Intelligent Multi-Mode Drive-, que consta de cuatro partes esenciales:\n un motor de gasolina de 2.0 litros, un propulsor electrico, un generador; y una batería de iones de litio, con una capacidad aproximada de 1 kWh. \n Este sistema consta con tres modos de funcionamiento: 100 POR CIEN electrico, hibrido y solo con el motor de combustion.\n");
 							system("PAUSE()");
 							break;
 							
 						case 24: 
-							printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("Este Toyota comparte plataforma modular TNGA-K con el Lexus ES, mientras que el motor hibrido de 218 CV es idéntico al que monta el Toyota RAV4 hybrid. \n Este propulsor se asocia a un cambio automatico de tipo CVT y a la traccion delantera y, gracias a su condicion hibrida, permite al Camry homologar un consumo medio de 5,3 litros/100 km segun el ciclo WLTP.\n");
 							system("PAUSE()");
 							break;
 							
 						case 25: 
-							printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("El Toyota C-HR se ha convertido en todo un Exito de ventas desde su lanzamiento.  \n ADEMAS, mantiene la version 1.8 Hybrid de 122 CV y anade la mas potente 2.0 Hybrid de 184 CV. \n");
 							system("PAUSE()");
 							break;
 						
@@ -920,27 +920,27 @@ int main (){
 					printf("Ha seleccionado el %s\n\n", coches[coche-1].stock); //SI PONE RESERVADO HAY QUE IMPEDIR LA RESERVA
 					switch (coche){
 						case 26: 
-							printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("Este es el patinete electrico tope de gama de la marca Megawheels. \n  Tiene una autonomia bastante correcta: 18-20km, con 2-3 horas de carga. \n Para esto incorpora un sistema de recuperacion de ahorro de energia: cuando conduces el patinete, al accionar los frenos y al soltar el acelerador, activan este sistema. \n A traves de este sistema la energia cinetica producida se convierte en energía electrica que se almacena de nuevo en la bateria. \n Se pliega en menos de 5 segundos y se lleva muy fácilmente en la mano (12,5 kg) gracias a un aluminio muy resistente.\n");
 							system("PAUSE()");
 							break;
 							
 						case 27:
-						printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("¡Para todos, incluso hasta los mas pequeños! Incorpora dos programas que limitan la velocidad máxima hasta 15 y 25 km/h. \n De esta forma, se lo puedes dejar a tu hijo sin problema o regular la velocidad si vas por una avenida peatonal. \n");
 							system("PAUSE()");
 							break;
 							
 						case 28: 
-							printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("Este es el patinete más equilibrado de nuestra seleccion.\n Podras recorrer hasta 30 km, estando siempre al tanto de las cuatro luces de notificacion LED en el panel que te indican la bateria restante. \n Ademas de una bateria de gran capacidad, incorpora un sistema de frenada regenerativa, por el cual la bateria se va recargando segun circulas con tu patinete.\n");
 							system("PAUSE()");
 							break;
 							
 						case 29: 
-							printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("Este modelo te interesara si mides mas de 1,85m, ya que su mastil es mas alto haciendo que la conduccion sea mucho mas natural y comoda.\n En cuanto a la autonomia, tiene 3 modos de conduccion acomodado a todo tipo de trayectos. \n");
 							system("PAUSE()");
 							break;
 							
 						case 30: 
-							printf("ERROR AL CARGAR LAS CARACTERISTACAS\n");
+							printf("Olvidate de mirar cuanta bateria te queda. El fabricante asegura que en condiciones optimas se pueden alcanzar los 45 km de autonomia.\n Ademas cuenta con: Frenos de disco ABS antiderrapaje \n Freno delantero regenerativo\n Autonomia.\n");
 							system("PAUSE()");
 							break;
 						
