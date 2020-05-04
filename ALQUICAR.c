@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+void banner();
+void Espacios(struct registro usuario[], int contUsuarios);
+
 
 struct coches{
 	char stock[100]; //los que tenemos
@@ -33,24 +36,7 @@ int main (){
 	FILE * pCoches;
 	FILE * pReservas;
 	
-	
-	printf("                      _______ ______ _______ _____  __________________________ ________    \n");
-    printf("           ||     |  ___    |___  / __  _  |__  / / /____  _/__  ____/___    |___  __ |  | \n");
-	printf("      .----|-----,|  __  /| |__  /  _  / / /_  / / /  __  /  _  /     __  /| |__  /_/ /  | \n");
-	printf("      ||  ||   ==||  _  ___ |_  /___/ /_/ / / /_/ /  __/ /   / /___   _  ___ |_  _, _/   | \n");
-	printf(" .-----'--'|   ==||  /_/  |_|/_____/\___|_|   \____/   /___/   |____/   /_/  |_|/_/ |_|    | \n");
-	printf(" |)-      ~|     ||______________________________________________________________________| \n");
-	printf(" | ___     |     |____...==..._  >                  |______________________________|       \n");
-	printf("[_/.-.\'--''-------- |/.-.  .-.\\/                     |/            || .-.  .-. ||        \n");
-	printf("  ( o )`===''''''''''`( o )( o )                     o              `( o )( o )`         \n");
-	printf("   '-'                 '-'  '-'                                       '-'  '-'           \n");
-	printf("\n\n");
-	
-	
-	printf("Le mostraremos a continuacion el menu:\n\n");
-	//system ("clc"); (limpia la pantalla)
-	
-	
+	banner();
 		pUsuarios = fopen("usuarios.txt","r");
 	if (pUsuarios == NULL){ 
 		printf("No se encuentra fichero");
@@ -85,13 +71,7 @@ int main (){
 			printf("Introduzca su nombre y apellidos: \n");
 			fflush (stdin);
 			gets(usuario[contUsuarios].nombre);
-			i=0;
-			while (usuario[contUsuarios].nombre[i]!='\0'){
-				if(usuario[contUsuarios].nombre[i]==' '){
-					usuario[contUsuarios].nombre[i]='_';
-				}
-				i++;
-			}
+			Espacios(usuario, contUsuarios);
 			fflush (stdin);
 			
 			do{ 
@@ -1041,4 +1021,33 @@ int main (){
 			system("CLS()");
 		} 
 	} while (opcion!=6);
+}
+void banner (){
+	
+	printf("                      _______ ______ _______ _____  __________________________ ________    \n");
+    printf("           ||     |  ___    |___  / __  _  |__  / / /____  _/__  ____/___    |___  __ |  | \n");
+	printf("      .----|-----,|  __  /| |__  /  _  / / /_  / / /  __  /  _  /     __  /| |__  /_/ /  | \n");
+	printf("      ||  ||   ==||  _  ___ |_  /___/ /_/ / / /_/ /  __/ /   / /___   _  ___ |_  _, _/   | \n");
+	printf(" .-----'--'|   ==||  /_/  |_|/_____/\___|_|   \____/   /___/   |____/   /_/  |_|/_/ |_|    | \n");
+	printf(" |)-      ~|     ||______________________________________________________________________| \n");
+	printf(" | ___     |     |____...==..._  >                  |______________________________|       \n");
+	printf("[_/.-.\'--''-------- |/.-.  .-.\\/                     |/            || .-.  .-. ||        \n");
+	printf("  ( o )`===''''''''''`( o )( o )                     o              `( o )( o )`         \n");
+	printf("   '-'                 '-'  '-'                                       '-'  '-'           \n");
+	printf("\n\n");
+	
+	
+	printf("Le mostraremos a continuacion el menu:\n\n");
+}
+void Espacios(struct registro usuario[], int contUsuarios){
+	int i=0;
+	
+	while (usuario[contUsuarios].nombre[i]!='\0'){
+				if(usuario[contUsuarios].nombre[i] == ' '){
+					usuario[contUsuarios].nombre[i]='_';
+				}
+				i++;
+		
+			return;
+		}
 }
