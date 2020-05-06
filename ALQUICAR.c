@@ -3,7 +3,8 @@
 #include <string.h>
 
 void banner();
-void Espacios(struct registro usuario[], int contUsuarios);
+void Espacios(char cadena[]);
+
 
 
 struct coches{
@@ -71,7 +72,7 @@ int main (){
 			printf("Introduzca su nombre y apellidos: \n");
 			fflush (stdin);
 			gets(usuario[contUsuarios].nombre);
-			Espacios(usuario, contUsuarios);
+			Espacios(usuario[contUsuarios].nombre);
 			fflush (stdin);
 			
 			do{ 
@@ -112,14 +113,8 @@ int main (){
 			} while(num<=0 || mayus<=0 || strlen(usuario[contUsuarios].contra)<5);
 				fflush (stdin);
 				printf("Introduzca su poblacion: \n"); //sin espacios
-				scanf("%s", usuario[contUsuarios].poblacion);
-				i=0;
-			while (usuario[contUsuarios].poblacion[i]!='\0'){
-				if(usuario[contUsuarios].poblacion[i]==' '){
-					usuario[contUsuarios].poblacion[i]='_';
-				}
-				i++;
-			}
+				gets(usuario[contUsuarios].poblacion);
+				Espacios(usuario[contUsuarios].poblacion);
 				fflush (stdin);
 				error=0;
 			do{
@@ -1039,15 +1034,14 @@ void banner (){
 	
 	printf("Le mostraremos a continuacion el menu:\n\n");
 }
-void Espacios(struct registro usuario[], int contUsuarios){
+void Espacios(char cadena[]){
 	int i=0;
 	
-	while (usuario[contUsuarios].nombre[i]!='\0'){
-				if(usuario[contUsuarios].nombre[i] == ' '){
-					usuario[contUsuarios].nombre[i]='_';
+	while (cadena[i]!='\0'){
+				if(cadena[i] == ' '){
+					cadena[i]='_';
 				}
-				i++;
-		
-			return;
+				i++;	
 		}
+		return;
 }
