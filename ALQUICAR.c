@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+//COLORES:
 #define R "\x1b[31m"
 #define Y  "\x1b[33m"
 #define C  "\x1b[36m"
 
-
+//FUNCIONES
 void banner();
 void Espacios(char cadena[]); //Cambia los espacios de una cadena por '_' para manejar mejor los ficheros
 void Reservas(int ncoches, int nreservas, int coche, struct coches coches[], struct registro usuario[]); //Hace la reservas (cambio el coche del fichero de stock al de reservas)
@@ -30,7 +31,7 @@ int main (){
 	system ("color 0B" );
 	int opcion, categoria,inicio,i,ncoches;
 	int permiso=0; //Comprueba que se ha logueado
-	int arrobas=0,puntos=0,error=0, mayus=0, num=0;
+	int error=0;
 	struct registro usuario[100];
 	int contUsuarios=0;
 	//DATOS LOGING
@@ -58,7 +59,7 @@ int main (){
 		contUsuarios++;
 		}
 		fclose(pUsuarios);
-		//para ver los usuarios registrados activa el siguiente printf
+		//para ver cuantos usuarios hay registrados activa el siguiente printf
 		//printf("%d\n",contUsuarios);
 	
 	
@@ -798,20 +799,16 @@ int main (){
 			i=0;
 			while(fscanf(pReservas, "%s %s", coches[i].reserva, coches[i].comprador)!= EOF){
 				correcto=1;
-				correcto=strcmp(usuario[j].correo,coches[i].comprador);
+				correcto=strcmp(usuario[j].correo,coches[i].comprador);// Sale 0 si el correo de registro es igual al de reserva del coche
 				if (correcto==0){
 					printf(Y"Hola, %s, ahora mismo tienes reservado el: %s\n"C, coches[i].comprador, coches[i].reserva);
 				}
 				i++;
 			}
-			
-			
-			
 			}
 			else{
 			printf(R"DEBES INICIAR SESION PARA ENTRAR EN  ESTA CATEGORIA\n"C);	
 			}
-			
 			system("PAUSE()");
 			system("CLS()");
 		
